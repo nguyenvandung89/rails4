@@ -1,0 +1,52 @@
+ja:
+  errors: &errors
+    format: ! '%{attribute}%{message}'
+    messages:
+      confirmation: "と確認の入力が一致しません"
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    models:
+      staff: "在籍女性"
+    attributes:
+      job:
+        name: "求人人称"
+        shop_name: "店舗名"
+        m_prefecture: "都道府県"
+        m_postal_code_id: "郵便番号"
+        m_district_ids: "地区"
+        interview_steps: "面接ステップ"
+        shop_url: "URL"
+        address1: "勤務先住所1"
+        address2: "勤務先住所2"
+        opening: "営業時間"
+        closing: "営業時間"
+        intruction_url: "紹介URL"
+        message: "店舗メッセージ"
+        job_image: "イメージ"
+        tel: "連絡先電話番号"
+        customers_in_day: "１日の接客数"
+        average_time: "1回の平均接客時間"
+        salary: "給与例"
+        required_license: "応法資格"
+        environment: "職場環境"
+        working_place_note: "勤務先備考"
+        nearest_station: "最寄り駅"
+        monthly_income: "月収例"
+        working_limit: "勤務日数・勤務時間の制限"
+        job_content: "仕事の内容"
+        m_desired_term_ids: "希望条件"
+        m_desired_treatment_ids: "希望待遇"
+        shop_image_1: "店舗イメージ画像1"
+        shop_image_2: "店舗イメージ画像2"
+        shop_image_3: "店舗イメージ画像3"
+        m_desired_job_type_ids: "希望職種"
+        m_industry_type_ids: "店舗形態"
+        created_at: "登録日"
+      m/manufacturer:
+        name: "オプション名"
+        created_at: "作成日"
+        sort: "優先度"
+        name_en:
+        logo:

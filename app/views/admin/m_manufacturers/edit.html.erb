@@ -1,0 +1,7 @@
+<section id="manufacturers-edit">
+  <h1 class="page-title"><%= t ".title", name: @m_manufacturer.name %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_m_manufacturers_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>

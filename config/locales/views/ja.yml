@@ -1,0 +1,55 @@
+ja:
+  title:
+    jobs: "求人機能"
+    cvs: "CV"
+  cvs:
+    form:
+      sex: "性別"
+      back: "一覧に戻る"
+      submit: "確認画面へ"
+    index:
+      destroy: "削除"
+      edit: "編集"
+      destroyed: "%{name} を削除しました。"
+    new:
+      back: "一覧に戻る"
+    edit:
+      back: "一覧に戻る"
+    show:
+      title: "%{name}"
+      edit: "編集する"
+      back: "一覧に戻る"
+      created: "%{name} を作成しました。"
+      updated: "%{name} を編集しました。"
+  admin:
+    manufacturers:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "%{pref_name}のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "%{pref_name}のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "%{pref_name} のホテル %{name} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "%{pref_name}のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{name}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{name}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "%{pref_name} のホテル %{name} を作成しました。"
+        updated: "%{pref_name} のホテル %{name} を編集しました。"

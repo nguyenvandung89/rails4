@@ -1,0 +1,28 @@
+<section id="manufacturers-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_m_manufacturer_path %>
+  </div>
+  <%= paginate @m_manufacturers %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= M::Manufacturer.h :name %></th>
+      <th><%= M::Manufacturer.h :name_en %></th>
+      <th><%= M::Manufacturer.h :logo %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @m_manufacturers.each do |manufacturer| %>
+    <tr>
+      <td><%= link_to manufacturer.name, admin_m_manufacturer_path(manufacturer) %></td>
+      <td><%= manufacturer.name_en %></td>
+      <td><%= image_tag manufacturer.logo %></td>
+      <td><%= manufacturer.created_at %></td>
+      <td><%= manufacturer.updated_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_m_manufacturer_path(manufacturer) %></td>
+      <td><%= link_to t(".destroy"), admin_m_manufacturer_path(manufacturer), method: :delete, data: {confirm: t("confirmation.delete")} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @m_manufacturers %>
+</section>
