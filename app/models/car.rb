@@ -1,7 +1,7 @@
 class Car < ActiveRecord::Base
   require "carrierwave/orm/activerecord"
 
-  PERMITTED_PARAMS = [:title, :m_manufacturer_id, :m_life_car_id, :gearbox_id, :exterior_id, :interior_id, :instruction_boot_id,
+  PERMITTED_PARAMS = [:name, :sale_price, :title, :m_manufacturer_id, :m_life_car_id, :gearbox_id, :exterior_id, :interior_id, :instruction_boot_id,
     :currency_id, :m_status_id, :m_origin_id, :driven_id, :rank, :start_year, :km_use,
     :number_door, :number_seat, :fuel, :system_fuel, :consumption_fuel, :description,
     :airbags_for_driver, :airbags_for_fron_passengers, :airbags_for_rear_passengers,
@@ -38,4 +38,6 @@ class Car < ActiveRecord::Base
   mount_uploader :image4, PictureUploader
   mount_uploader :image5, PictureUploader
   mount_uploader :image6, PictureUploader
+
+  scope :sales, -> {where(sale_price: true)}
 end
