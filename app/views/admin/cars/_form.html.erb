@@ -28,6 +28,14 @@
             </td>
           </tr>
           <tr>
+            <td><%= requirement_label @car, :name %></td>
+            <td><%= f.label :name %></td>
+            <td>
+              <%= f.text_field :name, title: "- Hãy nhập tên cho xe", class: "input-xlarge", required: true %>
+              <span class="validation_error_message"><%= f.full_error_messages_for("name").first %></span>
+            </td>
+          </tr>
+          <tr>
             <td><%= requirement_label @car, :m_manufacturer_id %></td>
             <td><%= f.label :m_manufacturer_id %></td>
             <td>
@@ -608,6 +616,13 @@
         </td>
       </tr>
 <% end %>
+      <tr>
+        <td><%= requirement_label @car, :sale_price %></td>
+        <td><%= f.label :sale_price %></td>
+        <td>
+          <%= f.check_box :sale_price %>
+        </td>
+      </tr>
     </tbody>
   </table>
   <div class="form-actions">

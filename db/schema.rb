@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206104954) do
+ActiveRecord::Schema.define(version: 20140207093957) do
 
   create_table "cars", force: true do |t|
     t.integer  "m_manufacturer_id"
@@ -92,6 +92,8 @@ ActiveRecord::Schema.define(version: 20140206104954) do
     t.string   "image6"
     t.string   "image7"
     t.string   "title"
+    t.boolean  "sale_price"
+    t.string   "name"
   end
 
   create_table "categories", force: true do |t|
