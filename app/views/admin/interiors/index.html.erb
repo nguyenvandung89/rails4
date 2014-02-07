@@ -1,0 +1,24 @@
+<section id="interiors-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_interior_path %>
+  </div>
+  <%= paginate @interiors %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= Interior.h :color %></th>
+      <th><%= Interior.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @interiors.each do |interior| %>
+    <tr>
+      <td><%= link_to interior.color, admin_interior_path(interior) %></td>
+      <td><%= interior.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_interior_path(interior) %></td>
+      <td><%= link_to t(".destroy"), admin_interior_path(interior), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @interiors %>
+</section>

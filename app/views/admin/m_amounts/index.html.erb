@@ -1,0 +1,24 @@
+<section id="amounts-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_m_amount_path %>
+  </div>
+  <%= paginate @m_amounts %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= M::Amount.h :amount %></th>
+      <th><%= M::Amount.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @m_amounts.each do |amount| %>
+    <tr>
+      <td><%= link_to amount.amount, admin_m_amount_path(amount) %></td>
+      <td><%= amount.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_m_amount_path(amount) %></td>
+      <td><%= link_to t(".destroy"), admin_m_amount_path(amount), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @m_amounts %>
+</section>

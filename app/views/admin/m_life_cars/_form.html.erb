@@ -1,0 +1,40 @@
+<%= form_for [:admin, @m_life_car], html: {class: "form-horizontal"} do |f| %>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @m_life_car, :name %></td>
+        <td><%= f.label :name %></td>
+        <td>
+          <%= f.text_field :name, class: "input-xlarge", required: true %>
+          <span class="validation_error_message"><%= f.full_error_messages_for("name").first %></span>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @m_life_car, :m_manufacturer_id %></td>
+        <td><%= f.label :m_manufacturer_id %></td>
+        <td>
+          <%= f.collection_select :m_manufacturer_id, M::Manufacturer.all, :id, :name, prompt: true,  required: true %>
+          <span class="validation_error_message"><%= f.full_error_messages_for("m_manufacturer_id").first %></span>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @m_life_car, :content %></td>
+        <td><%= f.label :content %></td>
+        <td>
+          <%= f.text_field :content, class: "input-xlarge" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="form-actions">
+    <%= f.submit class: %w(btn btn-primary) %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<section id="salon_cars-edit">
+  <h1 class="page-title"><%= t ".title", name: @salon_car.name %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_salon_cars_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>

@@ -1,0 +1,33 @@
+<section id="life_cars-show">
+  <h1 class="page-title"><%= t ".title", name: @m_life_car.name %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_m_life_car_path(@m_life_car), class: :btn %>
+    <%= link_to t(".back"), admin_m_life_cars_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @m_life_car, :name %></td>
+        <td><%= M::LifeCar.h :name %></td>
+        <td><%= @m_life_car.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @m_life_car, :content %></td>
+        <td><%= M::LifeCar.h :content %></td>
+        <td><%= @m_life_car.content %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @m_life_car, :m_manufacturer_id %></td>
+        <td><%= M::LifeCar.h :m_manufacturer_id %></td>
+        <td><%= @m_life_car.m_manufacturer.name %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

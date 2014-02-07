@@ -1,0 +1,7 @@
+<section id="interiors-edit">
+  <h1 class="page-title"><%= t ".title", color: @interior.color %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_interiors_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>

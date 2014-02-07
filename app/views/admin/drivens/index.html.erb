@@ -1,0 +1,26 @@
+<section id="drivens-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_driven_path %>
+  </div>
+  <%= paginate @drivens %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= Driven.h :driven_type %></th>
+      <th><%= Driven.h :detail %></th>
+      <th><%= Driven.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @drivens.each do |driven| %>
+    <tr>
+      <td><%= link_to driven.driven_type, admin_driven_path(driven) %></td>
+      <td><%= driven.detail %></td>
+      <td><%= driven.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_driven_path(driven) %></td>
+      <td><%= link_to t(".destroy"), admin_driven_path(driven), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @drivens %>
+</section>

@@ -6,11 +6,13 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem "mysql2"
+gem "validates_timeliness", "~> 3.0"
 gem "devise"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem "rails_config"
 gem "jquery-rails"
+gem "ransack"
 gem "jquery-ui-rails"
 gem "carrierwave"
 gem "mini_magick"
@@ -30,17 +32,10 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-group :assets, :staging, :production do
-  gem "coffee-rails", "~> 4.0.0"
-  gem "therubyracer"
-  gem "sass-rails", "~> 4.0.0"
-  gem "less-rails"
-  gem "uglifier", ">= 1.3.0"
-  gem "twitter-bootstrap-rails", git: "http://github.com/seyhunak/twitter-bootstrap-rails.git"
-  gem "turbo-sprockets-rails3"
-end
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+gem "twitter-bootstrap-rails"
 group :development, :test do
   gem "pry-rails"
   gem "pry"

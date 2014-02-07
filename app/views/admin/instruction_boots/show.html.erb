@@ -1,0 +1,28 @@
+<section id="instruction_boots-show">
+  <h1 class="page-title"><%= t ".title", name: @instruction_boot.name %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_instruction_boot_path(@instruction_boot), class: :btn %>
+    <%= link_to t(".back"), admin_instruction_boots_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @instruction_boot, :name %></td>
+        <td><%= InstructionBoot.h :name %></td>
+        <td><%= @instruction_boot.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @instruction_boot, :detail %></td>
+        <td><%= InstructionBoot.h :detail %></td>
+        <td><%= @instruction_boot.detail %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

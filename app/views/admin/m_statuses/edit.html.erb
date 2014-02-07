@@ -1,0 +1,7 @@
+<section id="statuses-edit">
+  <h1 class="page-title"><%= t ".title", status: @m_status.status %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_m_statuses_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>

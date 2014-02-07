@@ -1,0 +1,26 @@
+<section id="post_buy_cars-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_post_buy_car_path %>
+  </div>
+  <%= paginate @post_buy_cars %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= PostBuyCar.h :m_amount_id %></th>
+      <th><%= PostBuyCar.h :title %></th>
+      <th><%= PostBuyCar.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @post_buy_cars.each do |post_buy_car| %>
+    <tr>
+      <td><%= post_buy_car.m_amount.amount %></td>
+      <td><%= link_to post_buy_car.title, admin_post_buy_car_path(post_buy_car) %></td>
+      <td><%= post_buy_car.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_post_buy_car_path(post_buy_car) %></td>
+      <td><%= link_to t(".destroy"), admin_post_buy_car_path(post_buy_car), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @post_buy_cars %>
+</section>

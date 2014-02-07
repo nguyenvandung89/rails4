@@ -1,0 +1,7 @@
+<section id="drivens-edit">
+  <h1 class="page-title"><%= t ".title", driven_type: @driven.driven_type %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_drivens_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>

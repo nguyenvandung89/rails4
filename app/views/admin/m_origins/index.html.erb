@@ -1,0 +1,26 @@
+<section id="m_origins-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_m_origin_path %>
+  </div>
+  <%= paginate @m_origins %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= M::Origin.h :name %></th>
+      <th><%= M::Origin.h :detail %></th>
+      <th><%= M::Origin.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @m_origins.each do |m_origin| %>
+    <tr>
+      <td><%= link_to m_origin.name, admin_m_origin_path(m_origin) %></td>
+      <td><%= m_origin.detail %></td>
+      <td><%= m_origin.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_m_origin_path(m_origin) %></td>
+      <td><%= link_to t(".destroy"), admin_m_origin_path(m_origin), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @m_origins %>
+</section>

@@ -1,0 +1,72 @@
+<%= form_for [:admin, @salon_car], html: {class: "form-horizontal"} do |f| %>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @salon_car, :name %></td>
+        <td><%= f.label :name %></td>
+        <td>
+          <%= f.text_field :name, class: "input-xlarge", required: true %>
+          <span class="validation_error_message"><%= f.full_error_messages_for("name").first %></span>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @salon_car, :address %></td>
+        <td><%= f.label :address %></td>
+        <td>
+          <%= f.text_field :address, class: "input-xlarge", required: true %>
+          <span class="validation_error_message"><%= f.full_error_messages_for("address").first %></span>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @salon_car, :tel %></td>
+        <td><%= f.label :tel %></td>
+        <td>
+          <%= f.text_field :tel, class: "input-xlarge" %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @salon_car, :description %></td>
+        <td><%= f.label :description %></td>
+        <td>
+          <%= f.text_area :description, class: "input-xlarge" %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @salon_car, :background %></td>
+        <td><%= f.label :background %><br />
+<% if @salon_car.background? %>
+          <%= label_tag "", class: %W(btn danger mini) do %><%= f.check_box :remove_background %>この写真を削除<% end %>
+<% end %>
+        </td>
+        <td>
+          <%= image_tag @salon_car.background, width: 180 if @salon_car.background? %><%= f.file_field :background %>
+        </td>
+      </tr>
+<% (1..6).each do |i| %>
+      <tr>
+        <td><%= requirement_label @salon_car, :image %></td>
+        <td>写真<%= i %><br />
+          <div class="align-center margin-top10">
+            <%= label_tag "", class: %W(btn danger mini) do %><%= f.check_box "remove_image#{i}" %>この写真を削除<% end if @salon_car.send("image#{i}?") %>
+          </div>
+        </td>
+        <td>
+          <%= image_tag @salon_car.send("image#{i}"), width: 180 if @salon_car.send("image#{i}?") %><%= f.file_field "image#{i}" %>
+        </td>
+      </tr>
+<% end %>
+
+    </tbody>
+  </table>
+  <div class="form-actions">
+    <%= f.submit class: %w(btn btn-primary) %>
+  </div>
+<% end %>

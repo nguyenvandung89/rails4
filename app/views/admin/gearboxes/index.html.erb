@@ -1,0 +1,26 @@
+<section id="gearboxes-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_gearbox_path %>
+  </div>
+  <%= paginate @gearboxes %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= Gearbox.h :gearbox_type %></th>
+      <th><%= Gearbox.h :detail %></th>
+      <th><%= Gearbox.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @gearboxes.each do |gearbox| %>
+    <tr>
+      <td><%= link_to gearbox.gearbox_type, admin_gearbox_path(gearbox) %></td>
+      <td><%= gearbox.detail %></td>
+      <td><%= gearbox.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_gearbox_path(gearbox) %></td>
+      <td><%= link_to t(".destroy"), admin_gearbox_path(gearbox), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @gearboxes %>
+</section>

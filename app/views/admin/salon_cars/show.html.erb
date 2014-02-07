@@ -1,0 +1,50 @@
+<section id="salon_cars-show">
+  <h1 class="page-name"><%= t ".name", name: @salon_car.name %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_salon_car_path(@salon_car), class: :btn %>
+    <%= link_to t(".back"), admin_salon_cars_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @salon_car, :name %></td>
+        <td><%= SalonCar.h :name %></td>
+        <td><%= @salon_car.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @salon_car, :address %></td>
+        <td><%= SalonCar.h :address %></td>
+        <td><%= @salon_car.address %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @salon_car, :tel %></td>
+        <td><%= SalonCar.h :tel %></td>
+        <td><%= @salon_car.tel %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @salon_car, :description %></td>
+        <td><%= SalonCar.h :description %></td>
+        <td><%= @salon_car.description %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @salon_car, :background %></td>
+        <td><%= SalonCar.h :background %></td>
+        <td><%= image_tag @salon_car.background if @salon_car.background %></td>
+      </tr>
+<% (1..6).each do |i| -%>
+      <tr>
+        <td><%= requirement_label @salon_car, :image %></td>
+        <td>写真<%= i %></td>
+        <td><%= image_tag @salon_car.send("image#{i}"), width: 180 if @salon_car.send("image#{i}").present? %></td>
+      </tr>
+<% end -%>
+    </tbody>
+  </table>
+</section>

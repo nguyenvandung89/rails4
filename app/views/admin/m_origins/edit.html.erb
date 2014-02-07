@@ -1,0 +1,7 @@
+<section id="m_origins-edit">
+  <h1 class="page-title"><%= t ".title", name: @m_origin.name %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_m_origin_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>

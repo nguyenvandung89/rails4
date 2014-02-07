@@ -1,0 +1,23 @@
+<section id="interiors-show">
+  <h1 class="page-title"><%= t ".title", color: @interior.color %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_interior_path(@interior), class: :btn %>
+    <%= link_to t(".back"), admin_interiors_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @interior, :color %></td>
+        <td><%= Interior.h :color %></td>
+        <td><%= @interior.color %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

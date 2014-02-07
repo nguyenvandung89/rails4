@@ -1,0 +1,26 @@
+<section id="prefectures-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_m_prefecture_path %>
+  </div>
+  <%= paginate @m_prefectures %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= M::Prefecture.h :name %></th>
+      <th><%= M::Prefecture.h :roman_name %></th>
+      <th><%= M::Prefecture.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @m_prefectures.each do |prefecture| %>
+    <tr>
+      <td><%= link_to prefecture.name, admin_m_prefecture_path(prefecture) %></td>
+      <td><%= prefecture.roman_name %></td>
+      <td><%= prefecture.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_m_prefecture_path(prefecture) %></td>
+      <td><%= link_to t(".destroy"), admin_m_prefecture_path(prefecture), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @m_prefectures %>
+</section>

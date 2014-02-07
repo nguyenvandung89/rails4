@@ -1,0 +1,38 @@
+<section id="drivens-show">
+  <h1 class="page-title"><%= t ".title", driven_type: @driven.driven_type %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_driven_path(@driven), class: :btn %>
+    <%= link_to t(".back"), admin_drivens_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @driven, :driven_type %></td>
+        <td><%= Driven.h :driven_type %></td>
+        <td><%= @driven.driven_type %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @driven, :detail %></td>
+        <td><%= Driven.h :detail %></td>
+        <td><%= @driven.detail %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @driven, :m_manufacturer_ids %></td>
+        <td><%= Driven.h :m_manufacturer_ids %></td>
+        <td><%= @driven.m_manufacturers.map(&:name).join(", ") %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @driven, :image %></td>
+        <td><%= M::Manufacturer.h :image %></td>
+        <td><%= image_tag @driven.image %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

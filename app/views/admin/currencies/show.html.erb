@@ -1,0 +1,28 @@
+<section id="currencys-show">
+  <h1 class="page-title"><%= t ".title", name: @currency.name %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_currency_path(@currency), class: :btn %>
+    <%= link_to t(".back"), admin_currencies_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @currency, :name %></td>
+        <td><%= Currency.h :name %></td>
+        <td><%= @currency.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @currency, :name_en %></td>
+        <td><%= Currency.h :name_en %></td>
+        <td><%= @currency.name_en %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

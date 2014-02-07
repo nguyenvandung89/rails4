@@ -50,3 +50,137 @@ ja:
         sort: "優先度"
         name_en:
         logo:
+      m/amount:
+        amount:
+        created_at: "作成日"
+      m/status:
+        status:
+        created_at: "作成日"
+      exterior:
+        color:
+        created_at: "作成日"
+      interior:
+        color:
+        created_at: "作成日"
+      post_buy_car:
+        m_amount_id:
+        title:
+        content:
+        created_at: "作成日"
+      salon_car:
+        address:
+        name:
+        tel:
+        image1:
+        image2:
+        image3:
+        image4:
+        image5:
+        image6:
+        background:
+        description:
+        created_at: "作成日"
+      m/prefecture:
+        name:
+        roman_name:
+        sort:
+        created_at: "作成日"
+      gearbox:
+        gearbox_type:
+        detail:
+        created_at: "作成日"
+      driven:
+        driven_type:
+        detail:
+        created_at: "作成日"
+      currency:
+        name:
+        name_en:
+        created_at: "作成日"
+      m/life_car:
+        name:
+        content:
+        created_at: "作成日"
+      instruction_boot:
+        name:
+        detail:
+        created_at: "作成日"
+      m/origin:
+        name:
+        detail:
+        created_at: "作成日"
+      car:
+        m_manufacturer_id:
+        m_life_car_id:
+        gearbox_id:
+        exterior_id:
+        interior_id:
+        instruction_boot_id:
+        currency_id:
+        m_status_id:
+        m_origin_id:
+        driven_id:
+        rank:
+        start_year:
+        km_use:
+        amount:
+        number_door:
+        number_seat:
+        fuel:
+        system_fuel:
+        consumption_fuel:
+        description:
+        airbags_for_driver:
+        airbags_for_fron_passengers:
+        airbags_for_rear_passengers:
+        two_row_side_airbags:
+        airbag_suspension_two_seats_and_after:
+        antilock_brakes:
+        electronic_brake_distribution:
+        emergency_brake_assist:
+        automatic_electronic_balance:
+        cruise_control:
+        back_support_alerts:
+        traction_control_system:
+        safety_latches:
+        automatic_door_lock:
+        power_door_lock_remote_control:
+        engine_immobilizer:
+        burglar_alarm_system_peripheral:
+        fog_lights:
+        warning_lights_seatbelt:
+        brake_3rd_light_mounted_high_side:
+        positioning_equipment:
+        roof_window:
+        glass_electric_adjustment:
+        power_steering:
+        seat_material:
+        air_conditioner_ago:
+        after_conditioning:
+        supports_auto:
+        tumble_glass_after:
+        fan_behind_glass:
+        stained_glass:
+        lcd_screen:
+        device_audio_video:
+        device_other:
+        width_wide_height:
+        wheelbase:
+        tread_front_rear:
+        weight:
+        fuel_tank_capacity:
+        engine:
+        engine_type:
+        cylinder_capacity:
+        brake:
+        reducing_care:
+        tires:
+        rim_wheels:
+        other_specifications:
+        visibility:
+        image1:
+        image2:
+        image3:
+        image4:
+        image5:
+        image6:

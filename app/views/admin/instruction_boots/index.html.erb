@@ -1,0 +1,26 @@
+<section id="instruction_boots-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_instruction_boot_path %>
+  </div>
+  <%= paginate @instruction_boots %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= InstructionBoot.h :name %></th>
+      <th><%= InstructionBoot.h :detail %></th>
+      <th><%= InstructionBoot.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @instruction_boots.each do |instruction_boot| %>
+    <tr>
+      <td><%= link_to instruction_boot.name, admin_instruction_boot_path(instruction_boot) %></td>
+      <td><%= instruction_boot.detail %></td>
+      <td><%= instruction_boot.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_instruction_boot_path(instruction_boot) %></td>
+      <td><%= link_to t(".destroy"), admin_instruction_boot_path(instruction_boot), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @instruction_boots %>
+</section>

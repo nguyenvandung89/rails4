@@ -1,0 +1,28 @@
+<section id="salon_cars-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_salon_car_path %>
+  </div>
+  <%= paginate @salon_cars %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= SalonCar.h :name %></th>
+      <th><%= SalonCar.h :address %></th>
+      <th><%= SalonCar.h :tel %></th>
+      <th><%= SalonCar.h :background %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @salon_cars.each do |salon_car| %>
+    <tr>
+      <td><%= link_to salon_car.name, admin_salon_car_path(salon_car) %></td>
+      <td><%= salon_car.address %></td>
+      <td><%= salon_car.tel %></td>
+      <td><%= image_tag(salon_car.background, width: "200px", height: "200px") if salon_car.background? %></td>
+      <td><%= link_to t(".edit"), edit_admin_salon_car_path(salon_car) %></td>
+      <td><%= link_to t(".destroy"), admin_salon_car_path(salon_car), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @salon_cars %>
+</section>

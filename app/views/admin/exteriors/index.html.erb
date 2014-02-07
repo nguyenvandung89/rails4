@@ -1,0 +1,39 @@
+<section id="exteriors-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_exterior_path, class: :btn %>
+    <%= link_to "Search", "#", class: %w(btn search-form-toggle), "data-target" => "search-form" %>
+  </div>
+  <%= search_form_for @q, url: admin_exteriors_path, method: :get,
+    html: {id: "search-form", class: "search-form #{@q.conditions.empty? ? "" : "show"}"} do |f| %>
+    <div class="row-fluid search-row">
+      <div class="span4 search-col">
+        <%= f.label :color %>
+        <%= f.text_field :color_cont %>
+      </div>
+    </div>
+    <div class="row-fluid search-row">
+      <div class="span12 search-col">
+        <%= f.submit "Search", class: :btn %>
+      </div>
+    </div>
+  <% end %>
+  <%= paginate @exteriors %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= Exterior.h :color %></th>
+      <th><%= Exterior.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @exteriors.each do |exterior| %>
+    <tr>
+      <td><%= link_to exterior.color, admin_exterior_path(exterior) %></td>
+      <td><%= exterior.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_exterior_path(exterior) %></td>
+      <td><%= link_to t(".destroy"), admin_exterior_path(exterior), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @exteriors %>
+</section>

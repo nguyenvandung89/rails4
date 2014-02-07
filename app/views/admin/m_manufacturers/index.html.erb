@@ -20,7 +20,7 @@
       <td><%= manufacturer.created_at %></td>
       <td><%= manufacturer.updated_at %></td>
       <td><%= link_to t(".edit"), edit_admin_m_manufacturer_path(manufacturer) %></td>
-      <td><%= link_to t(".destroy"), admin_m_manufacturer_path(manufacturer), method: :delete, data: {confirm: t("confirmation.delete")} %></td>
+      <td><%= link_to t(".destroy"), admin_m_manufacturer_path(manufacturer), method: :delete, data: {confirm: "are you sure"} %></td>
     </tr>
 <% end %>
   </table>

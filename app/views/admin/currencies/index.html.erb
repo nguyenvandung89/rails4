@@ -1,0 +1,26 @@
+<section id="currencys-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_currency_path %>
+  </div>
+  <%= paginate @currencys %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= Currency.h :name %></th>
+      <th><%= Currency.h :name_en %></th>
+      <th><%= Currency.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @currencys.each do |currency| %>
+    <tr>
+      <td><%= link_to currency.name, admin_currency_path(currency) %></td>
+      <td><%= currency.name_en %></td>
+      <td><%= currency.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_currency_path(currency) %></td>
+      <td><%= link_to t(".destroy"), admin_currency_path(currency), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @currencys %>
+</section>

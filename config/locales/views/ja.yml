@@ -22,20 +22,46 @@ ja:
       created: "%{name} を作成しました。"
       updated: "%{name} を編集しました。"
   admin:
-    manufacturers:
+    components:
+      header:
+        logged_in_as: "でログイン中"
+        logout: "ログアウト"
+      side_menu:
+        home:
+          header: "HOME"
+        manage_cars:
+          header: "QUAN LY XE"
+          post_buy_cars:
+          salon_cars:
+          exteriors:
+          interiors:
+          gearboxes:
+          drivens:
+          currencies:
+          instruction_boots:
+          cars:
+        manage_master_datas:
+          header: "DU LIEU CHUAN"
+          m_manufacturers:
+          m_amounts:
+          m_statuses:
+          m_prefectures:
+          m_life_cars:
+          m_origins:
+    m_manufacturers:
       index:
         title: "全国のホテル一覧"
-        title_with_pref: "%{pref_name}のホテル一覧"
+        title_with_pref: "のホテル一覧"
         add: "ホテルの新規追加"
-        add_with_pref: "%{pref_name}のホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
         filter: "条件指定検索"
         destroy: "削除"
         edit: "編集"
         search: "検索"
-        destroyed: "%{pref_name} のホテル %{name} を削除しました。"
+        destroyed: "のホテル %{name} を削除しました。"
       new:
         title: "ホテルの新規追加"
-        title_with_pref: "%{pref_name}のホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
         back: "ホテル一覧に戻る"
       form:
         requirement: "条件"
@@ -51,5 +77,439 @@ ja:
         value: "入力"
         edit: "編集する"
         back: "ホテル一覧に戻る"
-        created: "%{pref_name} のホテル %{name} を作成しました。"
-        updated: "%{pref_name} のホテル %{name} を編集しました。"
+        created: "のホテル %{name} を作成しました。"
+        updated: "のホテル %{name} を編集しました。"
+    m_amounts:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{amount} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{amount}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{amount}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{amount} を作成しました。"
+        updated: "のホテル %{amount} を編集しました。"
+    post_buy_cars:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{title} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{title}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{title}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{title} を作成しました。"
+        updated: "のホテル %{title} を編集しました。"
+    m_prefectures:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{name} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{name}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{name}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{name} を作成しました。"
+        updated: "のホテル %{name} を編集しました。"
+    salon_cars:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{name} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{name}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{name}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{name} を作成しました。"
+        updated: "のホテル %{name} を編集しました。"
+    exteriors:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{color} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{color}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{color}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{color} を作成しました。"
+        updated: "のホテル %{color} を編集しました。"
+    interiors:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{color} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{color}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{color}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{color} を作成しました。"
+        updated: "のホテル %{color} を編集しました。"
+    m_statuses:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{status} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{status}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{status}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{status} を作成しました。"
+        updated: "のホテル %{status} を編集しました。"
+    gearboxes:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{gearbox_type} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{gearbox_type}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{gearbox_type}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{gearbox_type} を作成しました。"
+        updated: "のホテル %{gearbox_type} を編集しました。"
+    drivens:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{driven_type} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{driven_type}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{driven_type}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{driven_type} を作成しました。"
+        updated: "のホテル %{driven_type} を編集しました。"
+    currencies:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{name} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{name}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{name}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{name} を作成しました。"
+        updated: "のホテル %{name} を編集しました。"
+    m_life_cars:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{name} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{name}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{name}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{name} を作成しました。"
+        updated: "のホテル %{name} を編集しました。"
+    instruction_boots:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{name} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{name}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{name}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{name} を作成しました。"
+        updated: "のホテル %{name} を編集しました。"
+    m_origins:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテル %{name} を削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテル %{name}の編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル %{name}"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテル %{name} を作成しました。"
+        updated: "のホテル %{name} を編集しました。"
+    cars:
+      index:
+        title: "全国のホテル一覧"
+        title_with_pref: "のホテル一覧"
+        add: "ホテルの新規追加"
+        add_with_pref: "のホテルの新規追加"
+        filter: "条件指定検索"
+        destroy: "削除"
+        edit: "編集"
+        search: "検索"
+        destroyed: "のホテルを削除しました。"
+      new:
+        title: "ホテルの新規追加"
+        title_with_pref: "のホテルの新規追加"
+        back: "ホテル一覧に戻る"
+      form:
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+      edit:
+        title: "ホテルの編集"
+        back: "ホテル一覧に戻る"
+      show:
+        title: "ホテル"
+        requirement: "条件"
+        field: "説明"
+        value: "入力"
+        edit: "編集する"
+        back: "ホテル一覧に戻る"
+        created: "のホテルを作成しました。"
+        updated: "のホテルを編集しました。"

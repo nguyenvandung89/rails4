@@ -1,0 +1,23 @@
+<section id="amounts-show">
+  <h1 class="page-title"><%= t ".title", amount: @m_amount.amount %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_m_amount_path(@m_amount), class: :btn %>
+    <%= link_to t(".back"), admin_m_amounts_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @m_amount, :amount %></td>
+        <td><%= M::Amount.h :amount %></td>
+        <td><%= @m_amount.amount %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

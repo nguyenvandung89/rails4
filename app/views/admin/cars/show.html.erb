@@ -1,0 +1,370 @@
+<section id="Cars-show">
+  <h1 class="page-title">Thong tin oto</h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_car_path(@car), class: :btn %>
+    <%= link_to t(".back"), admin_cars_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr>
+        <td><%= requirement_label @car, :title %></td>
+        <td><%= Car.h :title %></td>
+        <td><%= @car.title %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :m_manufacturer_id %></td>
+        <td><%= Car.h :m_manufacturer_id %></td>
+        <td><%= @car.m_manufacturer.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :m_life_car_id %></td>
+        <td><%= Car.h :m_life_car_id %></td>
+        <td><%= @car.m_life_car.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :rank %></td>
+        <td><%= Car.h :rank %></td>
+        <td><%= @car.rank %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :start_year %></td>
+        <td><%= Car.h :start_year %></td>
+        <td><%= @car.start_year %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :m_origin_id %></td>
+        <td><%= Car.h :m_origin_id %></td>
+        <td><%= @car.m_origin.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :m_status_id %></td>
+        <td><%= Car.h :m_status_id %></td>
+        <td><%= @car.m_status.status %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :km_use %></td>
+        <td><%= Car.h :km_use %></td>
+        <td><%= @car.km_use %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :driven_id %></td>
+        <td><%= Car.h :driven_id %></td>
+        <td><%= @car.driven.driven_type %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :amount %></td>
+        <td><%= Car.h :amount %></td>
+        <td><%= @car.amount %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :visibility %></td>
+        <td><%= Car.h :visibility %></td>
+        <td><%= @car.visibility %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :exterior_id %></td>
+        <td><%= Car.h :exterior_id %></td>
+        <td><%= @car.exterior.color %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :interior_id %></td>
+        <td><%= Car.h :interior_id %></td>
+        <td><%= @car.interior.color %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :number_door %></td>
+        <td><%= Car.h :number_door %></td>
+        <td><%= @car.number_door %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :number_seat %></td>
+        <td><%= Car.h :number_seat %></td>
+        <td><%= @car.number_seat %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :gearbox_id %></td>
+        <td><%= Car.h :gearbox_id %></td>
+        <td><%= @car.gearbox.gearbox_type %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :instruction_boot_id %></td>
+        <td><%= Car.h :instruction_boot_id %></td>
+        <td><%= @car.instruction_boot.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :fuel %></td>
+        <td><%= Car.h :fuel %></td>
+        <td><%= @car.fuel %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :system_fuel %></td>
+        <td><%= Car.h :system_fuel %></td>
+        <td><%= @car.system_fuel %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :consumption_fuel %></td>
+        <td><%= Car.h :consumption_fuel %></td>
+        <td><%= @car.consumption_fuel %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :description %></td>
+        <td><%= Car.h :description %></td>
+        <td><%= @car.description %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :airbags_for_driver %></td>
+        <td><%= Car.h :airbags_for_driver %></td>
+        <td><%= @car.airbags_for_driver %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :airbags_for_fron_passengers %></td>
+        <td><%= Car.h :airbags_for_fron_passengers %></td>
+        <td><%= @car.airbags_for_fron_passengers %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :airbags_for_rear_passengers %></td>
+        <td><%= Car.h :airbags_for_rear_passengers %></td>
+        <td><%= @car.airbags_for_rear_passengers %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :two_row_side_airbags %></td>
+        <td><%= Car.h :two_row_side_airbags %></td>
+        <td><%= @car.two_row_side_airbags %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :airbag_suspension_two_seats_and_after %></td>
+        <td><%= Car.h :airbag_suspension_two_seats_and_after %></td>
+        <td><%= @car.airbag_suspension_two_seats_and_after %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :antilock_brakes %></td>
+        <td><%= Car.h :antilock_brakes %></td>
+        <td><%= @car.antilock_brakes %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :electronic_brake_distribution %></td>
+        <td><%= Car.h :electronic_brake_distribution %></td>
+        <td><%= @car.electronic_brake_distribution %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :emergency_brake_assist %></td>
+        <td><%= Car.h :emergency_brake_assist %></td>
+        <td><%= @car.emergency_brake_assist %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :automatic_electronic_balance %></td>
+        <td><%= Car.h :automatic_electronic_balance %></td>
+        <td><%= @car.automatic_electronic_balance %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :cruise_control %></td>
+        <td><%= Car.h :cruise_control %></td>
+        <td><%= @car.cruise_control %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :back_support_alerts %></td>
+        <td><%= Car.h :back_support_alerts %></td>
+        <td><%= @car.back_support_alerts %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :safety_latches %></td>
+        <td><%= Car.h :safety_latches %></td>
+        <td><%= @car.safety_latches %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :automatic_door_lock %></td>
+        <td><%= Car.h :automatic_door_lock %></td>
+        <td><%= @car.automatic_door_lock %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :power_door_lock_remote_control %></td>
+        <td><%= Car.h :power_door_lock_remote_control %></td>
+        <td><%= @car.power_door_lock_remote_control %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :engine_immobilizer %></td>
+        <td><%= Car.h :engine_immobilizer %></td>
+        <td><%= @car.engine_immobilizer %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :burglar_alarm_system_peripheral %></td>
+        <td><%= Car.h :burglar_alarm_system_peripheral %></td>
+        <td><%= @car.burglar_alarm_system_peripheral %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :fog_lights %></td>
+        <td><%= Car.h :fog_lights %></td>
+        <td><%= @car.fog_lights %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :warning_lights_seatbelt %></td>
+        <td><%= Car.h :warning_lights_seatbelt %></td>
+        <td><%= @car.warning_lights_seatbelt %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :brake_3rd_light_mounted_high_side %></td>
+        <td><%= Car.h :brake_3rd_light_mounted_high_side %></td>
+        <td><%= @car.brake_3rd_light_mounted_high_side %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :positioning_equipment %></td>
+        <td><%= Car.h :positioning_equipment %></td>
+        <td><%= @car.positioning_equipment %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :roof_window %></td>
+        <td><%= Car.h :roof_window %></td>
+        <td><%= @car.roof_window %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :m_manufacturer_id %></td>
+        <td><%= Car.h :m_manufacturer_id %></td>
+        <td><%= @car.m_manufacturer.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :burglar_alarm_system_peripheral %></td>
+        <td><%= Car.h :burglar_alarm_system_peripheral %></td>
+        <td><%= @car.burglar_alarm_system_peripheral %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :glass_electric_adjustment %></td>
+        <td><%= Car.h :glass_electric_adjustment %></td>
+        <td><%= @car.glass_electric_adjustment %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :power_steering %></td>
+        <td><%= Car.h :power_steering %></td>
+        <td><%= @car.power_steering %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :seat_material %></td>
+        <td><%= Car.h :seat_material %></td>
+        <td><%= @car.seat_material %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :air_conditioner_ago %></td>
+        <td><%= Car.h :air_conditioner_ago %></td>
+        <td><%= @car.air_conditioner_ago %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :after_conditioning %></td>
+        <td><%= Car.h :after_conditioning %></td>
+        <td><%= @car.after_conditioning %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :supports_auto %></td>
+        <td><%= Car.h :supports_auto %></td>
+        <td><%= @car.supports_auto %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :tumble_glass_after %></td>
+        <td><%= Car.h :tumble_glass_after %></td>
+        <td><%= @car.tumble_glass_after %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :fan_behind_glass %></td>
+        <td><%= Car.h :fan_behind_glass %></td>
+        <td><%= @car.fan_behind_glass %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :stained_glass %></td>
+        <td><%= Car.h :stained_glass %></td>
+        <td><%= @car.stained_glass %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :lcd_screen %></td>
+        <td><%= Car.h :lcd_screen %></td>
+        <td><%= @car.lcd_screen %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :device_audio_video %></td>
+        <td><%= Car.h :device_audio_video %></td>
+        <td><%= @car.device_audio_video %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :device_other %></td>
+        <td><%= Car.h :device_other %></td>
+        <td><%= @car.device_other %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :width_wide_height %></td>
+        <td><%= Car.h :width_wide_height %></td>
+        <td><%= @car.width_wide_height %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :wheelbase %></td>
+        <td><%= Car.h :wheelbase %></td>
+        <td><%= @car.wheelbase %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :tread_front_rear %></td>
+        <td><%= Car.h :tread_front_rear %></td>
+        <td><%= @car.tread_front_rear %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :weight %></td>
+        <td><%= Car.h :weight %></td>
+        <td><%= @car.weight %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :fuel_tank_capacity %></td>
+        <td><%= Car.h :fuel_tank_capacity %></td>
+        <td><%= @car.fuel_tank_capacity %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :engine %></td>
+        <td><%= Car.h :engine %></td>
+        <td><%= @car.engine %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :engine_type %></td>
+        <td><%= Car.h :engine_type %></td>
+        <td><%= @car.engine_type %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :cylinder_capacity %></td>
+        <td><%= Car.h :cylinder_capacity %></td>
+        <td><%= @car.cylinder_capacity %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :brake %></td>
+        <td><%= Car.h :brake %></td>
+        <td><%= @car.brake %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :reducing_care %></td>
+        <td><%= Car.h :reducing_care %></td>
+        <td><%= @car.reducing_care %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :tires %></td>
+        <td><%= Car.h :tires %></td>
+        <td><%= @car.tires %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :rim_wheels %></td>
+        <td><%= Car.h :rim_wheels %></td>
+        <td><%= @car.rim_wheels %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @car, :other_specifications %></td>
+        <td><%= Car.h :other_specifications %></td>
+        <td><%= @car.other_specifications %></td>
+      </tr>
+<% (1..6).each do |i| -%>
+      <tr>
+        <td><%= requirement_label @car, :image %></td>
+        <td>写真<%= i %></td>
+        <td><%= image_tag @car.send("image#{i}"), width: 180 if @car.send("image#{i}").present? %></td>
+      </tr>
+<% end -%>
+    </tbody>
+  </table>
+</section>

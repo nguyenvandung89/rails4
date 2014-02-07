@@ -1,0 +1,7 @@
+<section id="currencys-edit">
+  <h1 class="page-title"><%= t ".title", name: @currency.name %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_currencies_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>
