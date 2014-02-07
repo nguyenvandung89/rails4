@@ -1,0 +1,7 @@
+<section id="prefectures-edit">
+  <h1 class="page-title"><%= t ".title", name: @m_prefecture.name %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_m_prefectures_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>

@@ -1,0 +1,26 @@
+<section id="life_cars-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_m_life_car_path %>
+  </div>
+  <%= paginate @m_life_cars %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= M::LifeCar.h :life_car %></th>
+      <th><%= M::LifeCar.h :m_manufacturer_id %></th>
+      <th><%= M::LifeCar.h :created_at %></th>
+      <th></th>
+      <th></th>
+    </tr>
+<% @m_life_cars.each do |life_car| %>
+    <tr>
+      <td><%= link_to life_car.name, admin_m_life_car_path(life_car) %></td>
+      <td><%= life_car.m_manufacturer.name %></td>
+      <td><%= life_car.created_at %></td>
+      <td><%= link_to t(".edit"), edit_admin_m_life_car_path(life_car) %></td>
+      <td><%= link_to t(".destroy"), admin_m_life_car_path(life_car), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @m_life_cars %>
+</section>

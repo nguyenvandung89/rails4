@@ -1,0 +1,33 @@
+<section id="amounts-show">
+  <h1 class="page-title"><%= t ".title", title: @post_buy_car.title %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_post_buy_car_path(@post_buy_car), class: :btn %>
+    <%= link_to t(".back"), admin_post_buy_cars_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @post_buy_car, :title %></td>
+        <td><%= PostBuyCar.h :title %></td>
+        <td><%= @post_buy_car.title %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @post_buy_car, :content %></td>
+        <td><%= PostBuyCar.h :content %></td>
+        <td><%= @post_buy_car.content %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @post_buy_car, :m_amount_id %></td>
+        <td><%= PostBuyCar.h :m_amount_id %></td>
+        <td><%= @post_buy_car.m_amount.amount %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

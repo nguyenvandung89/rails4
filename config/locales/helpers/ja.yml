@@ -1,0 +1,9 @@
+ja:
+  viewhelper:
+    requirement:
+      text:
+        required: "必須"
+        not_required: "任意"
+      type:
+        required: "warning"
+        not_required: "info"

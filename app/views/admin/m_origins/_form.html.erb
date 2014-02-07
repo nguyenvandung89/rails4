@@ -1,0 +1,32 @@
+<%= form_for [:admin, @m_origin], html: {class: "form-horizontal"} do |f| %>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @m_origin, :name %></td>
+        <td><%= f.label :name %></td>
+        <td>
+          <%= f.text_field :name, class: "input-xlarge", required: true %>
+          <span class="validation_error_message"><%= f.full_error_messages_for("name").first %></span>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @m_origin, :detail %></td>
+        <td><%= f.label :detail %></td>
+        <td>
+          <%= f.text_area :detail, class: "input-xlarge" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="form-actions">
+    <%= f.submit class: %w(btn btn-primary) %>
+  </div>
+<% end %>

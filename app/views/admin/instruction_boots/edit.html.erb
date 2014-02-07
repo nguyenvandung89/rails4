@@ -1,0 +1,7 @@
+<section id="instruction_boots-edit">
+  <h1 class="page-title"><%= t ".title", name: @instruction_boot.name %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_instruction_boot_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>

@@ -1,0 +1,7 @@
+<section id="gearboxes-edit">
+  <h1 class="page-title"><%= t ".title", type: @gearbox.type %></h1>
+  <div class="actions">
+    <%= link_to t(".back"), admin_gearboxes_path, class: :btn %>
+  </div>
+  <%= render "form" %>
+</section>

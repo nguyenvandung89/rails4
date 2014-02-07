@@ -1,35 +1,42 @@
 <section id="manufacturers-show">
   <h1 class="page-title"><%= t ".title", name: @m_manufacturer.name %></h1>
   <div class="actions">
-<% if can? :update, manufacturer -%>
     <%= link_to t(".edit"), edit_admin_m_manufacturer_path(@m_manufacturer), class: :btn %>
-<% end -%>
     <%= link_to t(".back"), admin_m_manufacturers_path, class: :btn %>
   </div>
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
+        <th><%= t ".requirement" %></th>
         <th><%= t ".field" %></th>
         <th><%= t ".value" %></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><%= manufacturer.h :name %></td>
+        <td><%= requirement_label @m_manufacturer, :name %></td>
+        <td><%= M::Manufacturer.h :name %></td>
         <td><%= @m_manufacturer.name %></td>
       </tr>
       <tr>
-        <td><%= manufacturer.h :name_en %></td>
+        <td><%= requirement_label @m_manufacturer, :name_en %></td>
+        <td><%= M::Manufacturer.h :name_en %></td>
         <td><%= @m_manufacturer.name_en %></td>
       </tr>
       <tr>
-        <td></td>
-        <td><%= manufacturer.h :sort %></td>
+        <td><%= requirement_label @m_manufacturer, :sort %></td>
+        <td><%= M::Manufacturer.h :sort %></td>
         <td><%= @m_manufacturer.sort %></td>
       </tr>
       <tr>
-        <td><%= manufacturer.h :logo %></td>
+        <td><%= requirement_label @m_manufacturer, :logo %></td>
+        <td><%= M::Manufacturer.h :logo %></td>
         <td><%= image_tag @m_manufacturer.logo %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @m_manufacturer, :driven_ids %></td>
+        <td><%= M::Manufacturer.h :driven_ids %></td>
+        <td><%= @m_manufacturer.drivens.map(&:driven_type).join(", ") %></td>
       </tr>
     </tbody>
   </table>

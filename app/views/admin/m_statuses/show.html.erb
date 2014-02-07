@@ -1,0 +1,23 @@
+<section id="statuses-show">
+  <h1 class="page-title"><%= t ".title", status: @m_status.status %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_m_status_path(@m_status), class: :btn %>
+    <%= link_to t(".back"), admin_m_statuses_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @m_status, :status %></td>
+        <td><%= M::Status.h :status %></td>
+        <td><%= @m_status.status %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

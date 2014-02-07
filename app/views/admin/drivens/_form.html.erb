@@ -1,0 +1,53 @@
+<%= form_for [:admin, @driven], html: {class: "form-horizontal"} do |f| %>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @driven, :driven_type %></td>
+        <td><%= f.label :driven_type %></td>
+        <td>
+          <%= f.text_field :driven_type, class: "input-xlarge", required: true %>
+          <span class="validation_error_message"><%= f.full_error_messages_for("driven_type").first %></span>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @driven, :detail %></td>
+        <td><%= f.label :detail %></td>
+        <td>
+          <%= f.text_area :detail, class: "input-xlarge" %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @driven, :m_manufacturer_ids %></td>
+        <td><%= f.label :m_manufacturer_ids %></td>
+        <td>
+<% M::Manufacturer.all.each do |m| %>
+          <label style="display: inline;"><%= check_box_tag "driven[m_manufacturer_ids][]", m.id, @driven.m_manufacturers.include?(m) %>
+          <%= m.name %></label>
+<% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @driven, :image %></td>
+        <td><%= f.label :image %><br />
+<% if @driven.image? %>
+          <%= label_tag "", class: %W(btn danger mini) do %><%= f.check_box :remove_image %>この写真を削除<% end %>
+<% end %>
+        </td>
+        <td>
+          <%= image_tag @driven.image, width: 180 if @driven.image? %><%= f.file_field :image %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="form-actions">
+    <%= f.submit class: %w(btn btn-primary) %>
+  </div>
+<% end %>

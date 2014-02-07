@@ -1,0 +1,33 @@
+<section id="prefectures-show">
+  <h1 class="page-title"><%= t ".title", name: @m_prefecture.name %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_m_prefecture_path(@m_prefecture), class: :btn %>
+    <%= link_to t(".back"), admin_m_prefectures_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @m_prefecture, :name %></td>
+        <td><%= M::Prefecture.h :name %></td>
+        <td><%= @m_prefecture.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @m_prefecture, :roman_name %></td>
+        <td><%= M::Prefecture.h :roman_name %></td>
+        <td><%= @m_prefecture.roman_name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @m_prefecture, :sort %></td>
+        <td><%= M::Prefecture.h :sort %></td>
+        <td><%= @m_prefecture.sort %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

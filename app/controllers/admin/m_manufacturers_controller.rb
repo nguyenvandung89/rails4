@@ -18,7 +18,7 @@ class Admin::MManufacturersController < ApplicationController
   def create
     @m_manufacturer = M::Manufacturer.new m_manufacturer_params
     if @m_manufacturer.save
-      redirect_to @m_manufacturer, notice: {:".created" => {name: @m_manufacturer.name}}
+      redirect_to admin_m_manufacturer_path(@m_manufacturer), notice: {:".created" => {name: @m_manufacturer.name}}
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::MManufacturersController < ApplicationController
 
   def update
     if @m_manufacturer.update(m_manufacturer_params)
-      redirect_to @m_manufacturer, notice: {:".updated" => {name: @m_manufacturer.name}}
+      redirect_to admin_m_manufacturer_path(@m_manufacturer), notice: {:".updated" => {name: @m_manufacturer.name}}
     else
       render :edit
     end
@@ -44,6 +44,6 @@ class Admin::MManufacturersController < ApplicationController
   end
 
   def m_manufacturer_params
-    params.require(:m_manufacturer).permit!
+    params.require(:m_manufacturer).permit M::Manufacturer::PERMITTED_PARAMS
   end
 end

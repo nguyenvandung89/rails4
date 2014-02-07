@@ -1,0 +1,28 @@
+<section id="m_origins-show">
+  <h1 class="page-title"><%= t ".title", name: @m_origin.name %></h1>
+  <div class="actions">
+    <%= link_to t(".edit"), edit_admin_m_origin_path(@m_origin), class: :btn %>
+    <%= link_to t(".back"), admin_m_origins_path, class: :btn %>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".requirement" %></th>
+        <th><%= t ".field" %></th>
+        <th><%= t ".value" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= requirement_label @m_origin, :name %></td>
+        <td><%= M::Origin.h :name %></td>
+        <td><%= @m_origin.name %></td>
+      </tr>
+      <tr>
+        <td><%= requirement_label @m_origin, :detail %></td>
+        <td><%= M::Origin.h :detail %></td>
+        <td><%= @m_origin.detail %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

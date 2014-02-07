@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Rails4</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <%= javascript_include_tag :application %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Rails4" %></title>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <% if user_signed_in? %>
+    <%= render partial: "admin/components/header" %>
+    <% end %>
+  </head>
+  <body>
 
-</body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <% if user_signed_in? %>
+          <%= render partial: "admin/components/side_menu" %>
+          <% end %>
+        </div>
+        <div class="span9">
+          <%= bootstrap_flash %>
+          <%= yield %>
+          <%= yield(:bottom) if content_for?(:bottom) %>
+        </div>
+      </div><!--/row-->
+
+      <footer>
+        <p>
+          &copy; Company 2013
+        </p>
+      </footer>
+
+    </div>
+    <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+  </body>
 </html>
