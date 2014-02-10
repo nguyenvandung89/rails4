@@ -1,0 +1,69 @@
+<td align="center" valign="top">
+<table width="248" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+    <table width="248" border="0" align="center" cellpadding="0" cellspacing="0" style=" border:1px solid #666666; ">
+      <tr>
+        <td>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="25" height="30" align="center"><img src="/assets/visitor/top/bullet1.jpg" width="7" height="7" /></td>
+            <td class="text_bold"><strong>CARS FOR SALE BY MANUFACTURER</strong></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="1" bgcolor="#999999"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+        <table width="235" border="0" align="center" cellpadding="0" cellspacing="0">
+<% M::Manufacturer.all.each_slice(2) do |m| %>
+            <tr>
+<%   m.each do |manu| %>
+              <td width="42" align="center"><img src="/assets/visitor/top/square_bullet.jpg" width="11" height="11" /></td>
+              <td width="231" height="20" align="left"> <%= link_to manu.name, m_manufacturer_path(manu), class: "used_car" %> </td>
+  <%   end %>
+            </tr>
+<% end %>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="text_bold" align="center">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="25" height="30" align="center"><img src="/assets/visitor/top/bullet1.jpg" width="7" height="7" /></td>
+            <td class="text_bold"><strong>Advertisements</strong></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center"></td>
+      </tr>
+      <tr>
+        <td>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="25" height="30" align="center"><img src="/assets/visitor/top/bullet1.jpg" width="7" height="7" /></td>
+            <td class="text_bold"><strong>Browse Cars By State</strong></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="1" bgcolor="#999999"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><a href="/find-dealers"><img src="/assets/visitor/top/dealer_state.jpg" alt="Cars For Sale in USA" width="252" height="193" border="0" /></a></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table></td>

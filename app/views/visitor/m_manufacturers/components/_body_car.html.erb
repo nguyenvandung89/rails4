@@ -1,0 +1,39 @@
+<td valign="top">
+<table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center"  class="pad5" valign="top">
+    <table width="100%"  border="0" cellpadding="0" cellspacing="0" style="border:1PX solid #343232;">
+      <tr>
+        <td height="35" background="/assets/visitor/top/quicksearch_bg.jpg" class="text1" title="Chevrolet Car">&nbsp;&nbsp;Find a <%= m.name %> Convertible Cars for Sale by Model:</td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" class="bg3"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" valign="top">
+        <table width="720" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class=" imageborder">
+            <table width="720" border="0" cellspacing="0" cellpadding="0">
+              <% m.cars.each_slice(3) do |m_car| %>
+              <tr>
+                <% m_car.each do |car| %>
+                <td height="25" class="txt">
+                  <img src="/assets/visitor/top/bullet1.jpg" width="11" height="11" hspace="5" vspace="5" align="absmiddle" />
+                  <%= link_to car.name, car_path(car), style: "font-weight: bold; color: black;" %>
+                <BR/>
+                </td>
+                <% end %>
+              </tr>
+              <% end %>
+              <tr></tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table></td>
