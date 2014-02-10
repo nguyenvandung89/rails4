@@ -23,7 +23,7 @@
 <%   m.each do |manu| %>
             <td width="42" align="center"><img src="/assets/visitor/top/square_bullet.jpg" width="11" height="11" /></td>
             <td width="231" height="20" align="left">
-              <%= link_to manu.name, "#", class: "used_car" %>
+              <%= link_to manu.name, m_manufacturer_path(manu), class: "used_car" %>
             </td>
 <%   end %>
           </tr>

@@ -9,4 +9,5 @@ class M::Manufacturer < ActiveRecord::Base
   
   has_many :drivens, through: :driven_m_manufacturers
   has_many :driven_m_manufacturers, foreign_key: :m_manufacturer_id
+  has_many :cars, foreign_key: :m_manufacturer_id
 end

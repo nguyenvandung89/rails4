@@ -1,0 +1,69 @@
+<td width="732" valign="top">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+    <table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="35" background="/assets/visitor/top/quicksearch_bg.jpg" class="text1">&nbsp;&nbsp;Show a car</td>
+      </tr>
+      <tr>
+        <td align="center"  class="pad5" valign="top" style="border:1PX solid #343232;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+            <table width="100%"  border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="center" valign="top" class="pad5 bg3 imageborder">
+                <table width="99%" border="0" align="center" cellpadding="1" cellspacing="1" class="runing_text">
+                  <tr>
+                    <td width="166" align="center" valign="top">
+                      <%= link_to image_tag(@car.image1, width: "125", height: "90", border: "0", class: "box_img"), "#" %>
+                    </td>
+                    <td valign="top" class="pad5"><%= link_to @car.title, "#", class: "heading3" %>
+                    <br />
+                    <span class="text_bold"><%= @car.description %>
+                      <br/>
+                    </span></td>
+                    <td width="125" valign="top" class="pad5">
+                    <p>
+                      &nbsp;&nbsp; <span class="readmore">PRICE: <%= @car.amount %></span>
+                      <br/>
+                    </p></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" align="center" valign="top">
+                    <hr size="1">
+                    </td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td align="center" valign="top" class="text_red pad5"></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" class="pad5">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table></td>
