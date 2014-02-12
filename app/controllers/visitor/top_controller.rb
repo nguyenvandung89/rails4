@@ -1,4 +1,4 @@
-class Visitor::TopController < ApplicationController
+class Visitor::TopController < VisitorsController
   layout false
   def index
     

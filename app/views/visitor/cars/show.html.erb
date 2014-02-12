@@ -30,9 +30,7 @@
                 <td align="center" valign="top" class="pad5 bg3 imageborder">
                 <table width="99%" border="0" align="center" cellpadding="1" cellspacing="1" class="runing_text">
                   <tr>
-                    <td width="166" align="center" valign="top">
-                      <%= link_to image_tag(@car.image1, width: "125", height: "90", border: "0", class: "box_img"), "#" %>
-                    </td>
+                    <td width="166" align="center" valign="top"> <%= link_to image_tag(@car.image1, width: "125", height: "90", border: "0", class: "box_img"), "#" %> </td>
                     <td valign="top" class="pad5"><%= link_to @car.title, "#", class: "heading3" %>
                     <br />
                     <span class="text_bold"><%= @car.description %>
@@ -40,7 +38,12 @@
                     </span></td>
                     <td width="125" valign="top" class="pad5">
                     <p>
-                      &nbsp;&nbsp; <span class="readmore">PRICE: <%= @car.amount %></span>
+                      &nbsp;&nbsp; <span class="readmore">PRICE:
+                        <% if @car.visibility == true %>
+                        $ <%= @car.amount %>
+                        <% else %>
+                        <%= @car.amount %>TriệuVNĐ
+                        <% end %> </span>
                       <br/>
                     </p></td>
                   </tr>
@@ -48,6 +51,104 @@
                     <td colspan="4" align="center" valign="top">
                     <hr size="1">
                     </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <table border="1px" a>
+                      <tbody>
+                        <tr>
+                          <td colspan="2"><h2 style="color: blue;">Thông số kỹ thuật</h3></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :name %></td>
+                          <td><%= @car.name %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :title %></td>
+                          <td><%= @car.title %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :m_manufacturer_id %></td>
+                          <td><%= @car.m_manufacturer.name %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :m_life_car_id %></td>
+                          <td><%= @car.m_life_car.name %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :rank %></td>
+                          <td><%= @car.rank %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :start_year %></td>
+                          <td><%= @car.start_year %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :m_origin_id %></td>
+                          <td><%= @car.m_origin.name %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :m_status_id %></td>
+                          <td><%= @car.m_status.status %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :km_use %></td>
+                          <td><%= @car.km_use %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :driven_id %></td>
+                          <td><%= @car.driven.driven_type %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :amount %></td>
+                          <td><%= @car.amount %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :visibility %></td>
+                          <td><%= @car.visibility %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :exterior_id %></td>
+                          <td><%= @car.exterior.color %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :interior_id %></td>
+                          <td><%= @car.interior.color %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :number_door %></td>
+                          <td><%= @car.number_door %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :number_seat %></td>
+                          <td><%= @car.number_seat %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :gearbox_id %></td>
+                          <td><%= @car.gearbox.gearbox_type %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :instruction_boot_id %></td>
+                          <td><%= @car.instruction_boot.name %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :fuel %></td>
+                          <td><%= @car.fuel %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :system_fuel %></td>
+                          <td><%= @car.system_fuel %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :consumption_fuel %></td>
+                          <td><%= @car.consumption_fuel %></td>
+                        </tr>
+                        <tr>
+                          <td><%= Car.h :description %></td>
+                          <td><%= @car.description %></td>
+                        </tr>
+                      </tbody>
+                    </table></td>
                   </tr>
                 </table></td>
               </tr>

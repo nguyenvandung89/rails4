@@ -3,16 +3,16 @@
 <tr>
   <td height="10"></td>
 </tr>
-
+<%
+  crumb_text = {"visitor/Top" => "Home",
+    "visitor/m_manufacturers" => "Manufacturers",
+    "visitor/cars" => "Cars"
+  }
+%>
 <tr>
   <td height="24" class="text_bold">
   <div style="margin:10px 0 5px 10px;">
-    <a href="/" class="text_bold">Home</a><span class="price">></span>
-
-    <span class="text_bold" style="font-weight:normal; text-decoration:none;"> <a href="/used-cheap-convertible-cars-sale" class="text_bold">Used Cheap Convertible Cars Sale</a></span>
-    <span class="price">></span>
-    <span class="text_bold">Chevrolet</span>
-
+     <span class="text_bold" style="font-weight:normal; text-decoration:none;"><%= link_to "Home", root_path %></span><span class="price">＞</span> <%= crumb_text[params[:controller]] %>
   </div></td>
 </tr>
 <tr>

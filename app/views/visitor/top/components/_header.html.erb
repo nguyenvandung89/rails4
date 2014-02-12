@@ -101,7 +101,13 @@
                         <td width="1" align="center" bgcolor="#878787"></td>
                         <td align="center"><a href="/find-dealers" class="white_bold" title="Find Dealers">Find Car Dealer</a></td>
                         <td width="1" align="center" bgcolor="#878787"></td>
-                        <td align="center"><a href="/login" class="white_bold" title="Sign In">Sign In</a></td>
+                        <td align="center">
+                        <% if visitor_signed_in? %>
+                        <%= button_to "Sign Out", destroy_visitor_session_path, method: :delete, class: "white_bold" %>
+                        <% else %>
+                        <%= link_to "Sign In", new_visitor_session_path, class: "white_bold" %>
+                        <% end %>
+                        </td>
                         <td width="1" align="center" bgcolor="#878787"></td>
                         <td align="center"><a href="/contact-us" class="white_bold" title="Contact Us">Contact Us</a></td>
                         <td width="1" align="center" bgcolor="#878787"></td>
