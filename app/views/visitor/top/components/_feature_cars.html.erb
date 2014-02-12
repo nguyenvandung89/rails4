@@ -31,11 +31,15 @@
             <tr class="runing_text">
               <% Car.sales.limit(5).each do |car| %>
                 <td width="20%" height="138" align="center" class="vr">
-                  <%= link_to image_tag(car.image1, width: "125", height: "90", vspace: "5",  border: "0", align: "top", class: "imageborder"), "#" %>
+                  <%= link_to image_tag(car.image1, width: "125", height: "90", vspace: "5",  border: "0", align: "top", class: "imageborder"), car_path(car) %>
                   <br />
-                  <%= link_to car.name, "#", class: "text_bold" %>
+                  <%= link_to car.name, car_path(car), class: "text_bold" %>
                   <br />
-                  <span class="price">Price : <%= car.amount %></span></td>
+                  <span class="price">Price : <% if car.visibility == true %>
+                        $ <%= car.amount %>
+                        <% else %>
+                        <%= car.amount %>TriệuVNĐ
+                        <% end %> </span></td>
                 </td>
               <% end %>
             </tr><tr></tr>

@@ -16,7 +16,7 @@ class Car < ActiveRecord::Base
     :stained_glass, :lcd_screen, :device_audio_video, :device_other, :width_wide_height,
     :wheelbase, :tread_front_rear, :weight, :fuel_tank_capacity, :engine, :engine_type,
     :cylinder_capacity, :brake, :reducing_care, :tires, :rim_wheels, :other_specifications, :visibility,
-    :image1, :image1_cache,
+    :image1, :image1_cache, :amount,
     :remove_image1, :image2, :image2_cache, :remove_image2, :image3, :image3_cache,
     :remove_image3, :image4, :image4_cache, :remove_image4, :image5, :image5_cache,
     :remove_image5, :image6, :image6_cache, :remove_image6]

@@ -1,0 +1,124 @@
+<%= stylesheet_link_tag "/assets/visitor/cars" %>
+<%= render "/visitor/top/components/header" %>
+<tr>
+  <td height="10"></td>
+</tr>
+<%
+ crumb_text = {"visitor/Top" => "Home",
+    "visitor/m_manufacturers" => "Manufacturers",
+    "visitor/cars" => "Cars"
+  }
+%>
+<tr>
+  <td height="24" class="text_bold">
+  <div style="margin:10px 0 5px 10px;">
+    <span class="text_bold" style="font-weight:normal; text-decoration:none;"><%= link_to "Home", root_path %></span><span class="price">＞</span> <%= crumb_text[params[:controller]] %>
+  </div></td>
+</tr>
+<tr>
+  <td height="1" bgcolor="#999999"></td>
+</tr>
+<tr>
+  <td height="5"></td>
+</tr></table></td></tr>
+<tr>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+
+      <td width="732" valign="top">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+          <table width="720" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="center" valign="top">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td valign="top">
+              <table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center"  class="pad5" valign="top">
+                  <table width="100%"  border="0" cellpadding="0" cellspacing="0" style="border:1PX solid #343232;">
+                    <tr>
+                      <td height="35" background="/assets/visitor/top/quicksearch_bg.jpg" class="text1" title="Chevrolet Car">&nbsp;&nbsp;Member Log In for Buy Used classic car, old cars by trader, Muscle car trader</td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top" class="bg3"></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top">
+                      <table width="720" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td class=" imageborder">
+                          <table width="720" border="0" cellspacing="0" cellpadding="0">
+
+                            <tr>
+                              <td align="center" valign="top" class="link_red"> <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                              <table cellspacing="3" cellpadding="3" border="0" width="100%" class="data_text">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" class="text_red" colspan="2"><strong></strong></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" class="top_link"><strong class="text_red">User Email : </strong></td><td class="car_price"><%= f.email_field :email, :autofocus => true %></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" class="top_link"><strong class="text_red">Password : </strong></td><td class="car_price"><%= f.password_field :password %></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="car_price">&nbsp;</td><td class="car_price"><%= f.submit "Sign in", style: "width:100px;", class: "button" %></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="car_price">&nbsp;</td><td class="data_text"><strong><% if devise_mapping.rememberable? -%><%= f.check_box :remember_me %> <%= f.label :remember_me %><% end %></strong></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="car_price">&nbsp;</td><td class="data_text"><strong> <%= link_to "Forgot password? Click here", new_password_path(resource_name), class: "white_bold" %></strong></td>
+                                  </tr>
+                                  <tr>
+                                  <td class="car_price">&nbsp;</td><td class="data_text"><strong> <%= link_to "Not A Member? Click here to register today", new_registration_path(resource_name), class: "white_bold" %></strong></td>
+                                  </tr>
+                                </tbody>
+                              </table> <% end %></td>
+                            </tr>
+                            <tr></tr>
+                          </table></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </table></td>
+        </tr>
+        <%= render "/visitor/m_manufacturers/components/body_car_bottom" %>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table></td>
+
+      <%= render "/visitor/m_manufacturers/components/main_right" %>
+    </tr>
+  </table></td>
+</tr>
+<%= render "/visitor/top/components/footer" %>
+

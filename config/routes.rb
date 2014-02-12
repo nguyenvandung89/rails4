@@ -1,4 +1,5 @@
 Rails4::Application.routes.draw do
+  devise_for :visitors
   resources :categories
   devise_for :users
   namespace :admin do
@@ -22,7 +23,7 @@ Rails4::Application.routes.draw do
 scope module: :visitor do
     root to: "top#index"
     resources :top, only: :index
-    resources :m_manufacturers, only: [:show]
+    resources :m_manufacturers, only: [:show, :index]
     resources :cars, only: [:show]
   end
 end

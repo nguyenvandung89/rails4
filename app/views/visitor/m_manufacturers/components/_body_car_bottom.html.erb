@@ -25,10 +25,10 @@
               <td>
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                  <td height="25" align="center" class="text"> <%= link_to d.driven_type, "#", class: "cars" %> </td>
+                  <td height="25" align="center" class="text"> <%= link_to d.driven_type, m_manufacturers_path(target: d), class: "cars" %> </td>
                 </tr>
                 <tr>
-                  <td align="center"> <%= link_to image_tag(d.image, width: "126", height: "65"), "#" %> </td>
+                  <td align="center"> <%= link_to image_tag(d.image, width: "126", height: "65"), m_manufacturers_path(target: d) %> </td>
                 </tr>
                 <tr>
                   <td height="12"></td>

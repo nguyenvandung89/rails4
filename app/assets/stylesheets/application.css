@@ -20,3 +20,6 @@
 .accordion-heading a:hover{
   color: white !important;
 }
+a:hover{
+background: none !important;
+}
