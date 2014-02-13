@@ -1,4 +1,4 @@
-class Admin::ExteriorsController < ApplicationController
+class Admin::ExteriorsController < AdminsController
 
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 

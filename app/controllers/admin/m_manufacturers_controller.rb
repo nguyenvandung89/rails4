@@ -1,4 +1,4 @@
-class Admin::MManufacturersController < ApplicationController
+class Admin::MManufacturersController < AdminsController
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 
   def index

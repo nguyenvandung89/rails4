@@ -1,4 +1,4 @@
-class Admin::DrivensController < ApplicationController
+class Admin::DrivensController < AdminsController
 
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 

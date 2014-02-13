@@ -1,0 +1,42 @@
+<section id="cars-index" class="row-fluid">
+  <h1 class="page-title"><%= t(".title") %></h1>
+  <div class="actions">
+    <%= link_to "new", new_admin_car_path %>
+  </div>
+  <%= paginate @cars %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th><%= Car.h :m_manufacturer_id %></th>
+      <th><%= Car.h :m_life_car_id %></th>
+      <th><%= Car.h :start_year %></th>
+      <th><%= Car.h :m_origin_id %></th>
+      <th><%= Car.h :driven_id %></th>
+      <th><%= Car.h :amount %></th>
+      <th><%= Car.h :visibility %></th>
+      <th><%= Car.h :exterior_id %></th>
+      <th><%= Car.h :gearbox_id %></th>
+      <th><%= Car.h :number_seat %></th>
+      <th><%= Car.h :fuel %></th>
+      <th colspan="3"></th>
+    </tr>
+<% @cars.each do |car| %>
+    <tr>
+      <td><%= car.m_manufacturer.name %></td>
+      <td><%= car.m_life_car.name %></td>
+      <td><%= car.start_year %></td>
+      <td><%= car.m_origin.name %></td>
+      <td><%= car.driven.driven_type %></td>
+      <td><%= car.amount %></td>
+      <td><%= car.visibility %></td>
+      <td><%= car.exterior.color %></td>
+      <td><%= car.gearbox.gearbox_type %></td>
+      <td><%= car.number_seat %></td>
+      <td><%= car.fuel %></td>
+      <td><%= link_to "Show", admin_car_path(car) %></td>
+      <td><%= link_to t(".edit"), edit_admin_car_path(car) %></td>
+      <td><%= link_to t(".destroy"), admin_car_path(car), method: :delete, data: {confirm: "are you sure"} %></td>
+    </tr>
+<% end %>
+  </table>
+  <%= paginate @cars %>
+</section>

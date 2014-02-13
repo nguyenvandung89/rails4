@@ -1,6 +1,7 @@
 Rails4::Application.routes.draw do
   devise_for :visitors
   resources :categories
+  resources :likes, only: [:create, :destroy]
   devise_for :users
   namespace :admin do
      resources :m_manufacturers
@@ -24,6 +25,6 @@ scope module: :visitor do
     root to: "top#index"
     resources :top, only: :index
     resources :m_manufacturers, only: [:show, :index]
-    resources :cars, only: [:show]
+    resources :cars
   end
 end

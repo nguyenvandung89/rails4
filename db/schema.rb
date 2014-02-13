@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212062927) do
+ActiveRecord::Schema.define(version: 20140213090846) do
 
   create_table "cars", force: true do |t|
     t.integer  "m_manufacturer_id"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20140212062927) do
     t.string   "title"
     t.boolean  "sale_price"
     t.string   "name"
+    t.integer  "visitor_id"
   end
 
   create_table "categories", force: true do |t|
@@ -148,6 +149,13 @@ ActiveRecord::Schema.define(version: 20140212062927) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "likes", force: true do |t|
+    t.integer "car_id"
+    t.integer "visitor_id"
+  end
+
+  add_index "likes", ["visitor_id", "car_id"], name: "index_likes_on_visitor_id_and_car_id", unique: true, using: :btree
 
   create_table "m_amounts", force: true do |t|
     t.string   "amount"

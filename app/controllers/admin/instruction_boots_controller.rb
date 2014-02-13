@@ -1,4 +1,4 @@
-class Admin::InstructionBootsController < ApplicationController
+class Admin::InstructionBootsController < AdminsController
 
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 

@@ -1,0 +1,439 @@
+<%= javascript_include_tag :application %>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<td width="732" valign="top">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+    <table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="35" background="/assets/visitor/top/quicksearch_bg.jpg" class="text1">&nbsp;&nbsp;Create new a car</td>
+      </tr>
+      <tr>
+        <td align="center"  class="pad5" valign="top" style="border:1PX solid #343232;"> <%= form_for [@car], html: {class: "form-horizontal"} do |f| %>
+        <table class="table table-striped table-bordered">
+          <tbody>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Thông số cơ bản
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :title %></td>
+              <td> <%= f.text_field :title, title: "- Hãy nhập tiêu đề cho xe", class: "input-xlarge", required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("title").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :name %></td>
+              <td> <%= f.text_field :name, title: "- Hãy nhập tên cho xe", class: "input-xlarge", required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("name").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :m_manufacturer_id %></td>
+              <td> <%= f.collection_select :m_manufacturer_id, M::Manufacturer.all, :id, :name, prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("m_manufacturer_id").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :m_life_car_id %></td>
+              <td> <%= f.collection_select :m_life_car_id, M::LifeCar.all, :id, :name, prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("m_life_car_id").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :rank %></td>
+              <td> <%= f.text_field :rank, title: "- Hãy nhập phân hạng đời xe nếu có.VD: Bạn nhập G cho dòng xe Toyota Innova G", class: "input-xlarge", required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("rank").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :start_year %></td>
+              <td> <%= f.select(:start_year, 1990..Time.now.year, class: "input-xlarge", required: true) %> <span class="validation_error_message"><%= f.full_error_messages_for("start_year").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :m_origin_id %></td>
+              <td> <%= f.collection_select :m_origin_id, M::Origin.all, :id, :name, prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("m_life_car_id").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :m_status_id %></td>
+              <td> <%= f.collection_select :m_status_id, M::Status.all, :id, :status, prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("m_status_id").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :km_use %></td>
+              <td> <%= f.text_field :km_use, title: "- Nhập số Km đã đi được", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :driven_id %></td>
+              <td> <%= f.collection_select :driven_id, Driven.all, :id, :driven_type, prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("driven_id").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :amount %></td>
+              <td> <%= f.text_field :amount, title: "- Nhập giá tiền. Bạn có thể nhập giá theo VND hoặc USD. Chỉ nhập số,không cần nhập dấu cách cho hàng nghìn", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :visibility %></td>
+              <td> <%= f.radio_button :visibility, true %>
+              <%= f.label "USD" %>
+              <%= f.radio_button :visibility, false %>
+              <%= f.label "Triệu đồng" %> <span class="validation_error_message"><%= f.full_error_messages_for("visibility").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :exterior_id %></td>
+              <td> <%= f.collection_select :exterior_id, Exterior.all, :id, :color, prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("exterior_id").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :interior_id %></td>
+              <td> <%= f.collection_select :interior_id, Interior.all, :id, :color, prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("interior_id").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :number_door %></td>
+              <td> <%= f.text_field :number_door, title: "Nhập số cửa xe. VD: Nhập số 4 cho xe 4 cửa", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :number_seat %></td>
+              <td> <%= f.text_field :number_seat, title: "Nhập số chỗ ngồi", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Hộp số chuyển động
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :gearbox_id %></td>
+              <td> <%= f.collection_select :gearbox_id, Gearbox.all, :id, :gearbox_type, prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("gearbox_id").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :instruction_boot_id %></td>
+              <td> <%= f.collection_select :instruction_boot_id, InstructionBoot.all, :id, :name, prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("instruction_boot_id").first %></span></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Nhiên liệu
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :fuel %></td>
+              <td> <%= f.select :fuel, [ 'Xăng', 'Diesel', 'Hybrid', 'Điện', 'Loại khác' ], prompt: true,  required: true %> <span class="validation_error_message"><%= f.full_error_messages_for("fuel").first %></span></td>
+            </tr>
+            <tr>
+              <td><%= f.label :system_fuel %></td>
+              <td> <%= f.text_field :system_fuel, title: "Hãy nhập thông tin hệ thống nhiên liệu xe của bạn. VD: Phun xăng điện tử", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :consumption_fuel %></td>
+              <td> <%= f.text_field :consumption_fuel, title: "Hãy nhập thông tin tiêu thụ nhiên liệu (lít) cho 100Km xe của bạn. VD: Bạn nhập 10 khi xe bạn tiêu thụ 10L/100Km.", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :description %></td>
+              <td> <%= f.text_area :description, title: " Hãy nhập thông tin mô tả tóm tắt xe của bạn. Lưu ý: Nhập tiếng việt có dấu. Không nhập thông tin liên hệ (số điện thoại,email) tại đây. Không đăng quảng cáo tại đây", cols: 20, rows: 10, class: "input-xlarge" %> </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Túi khí an toàn
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :airbags_for_driver %></td>
+              <td> <%= f.check_box :airbags_for_driver %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :airbags_for_fron_passengers %></td>
+              <td> <%= f.check_box :airbags_for_fron_passengers %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :airbags_for_rear_passengers %></td>
+              <td> <%= f.check_box :airbags_for_rear_passengers %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :two_row_side_airbags %></td>
+              <td> <%= f.check_box :two_row_side_airbags %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :airbag_suspension_two_seats_and_after %></td>
+              <td> <%= f.check_box :airbag_suspension_two_seats_and_after %> </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Phanh - Điều khiển
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :antilock_brakes %></td>
+              <td> <%= f.check_box :antilock_brakes %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :electronic_brake_distribution %></td>
+              <td> <%= f.check_box :electronic_brake_distribution %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :emergency_brake_assist %></td>
+              <td> <%= f.check_box :emergency_brake_assist %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :automatic_electronic_balance %></td>
+              <td> <%= f.check_box :automatic_electronic_balance %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :cruise_control %></td>
+              <td> <%= f.check_box :cruise_control %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :back_support_alerts %></td>
+              <td> <%= f.check_box :back_support_alerts %> </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Khóa chống trộm
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :safety_latches %></td>
+              <td> <%= f.check_box :safety_latches %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :automatic_door_lock %></td>
+              <td> <%= f.check_box :automatic_door_lock %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :power_door_lock_remote_control %></td>
+              <td> <%= f.check_box :power_door_lock_remote_control %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :engine_immobilizer %></td>
+              <td> <%= f.check_box :engine_immobilizer %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :burglar_alarm_system_peripheral %></td>
+              <td> <%= f.check_box :burglar_alarm_system_peripheral %> </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Các thông số khác
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :fog_lights %></td>
+              <td> <%= f.check_box :fog_lights %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :warning_lights_seatbelt %></td>
+              <td> <%= f.check_box :warning_lights_seatbelt %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :brake_3rd_light_mounted_high_side %></td>
+              <td> <%= f.check_box :brake_3rd_light_mounted_high_side %> </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Thiết bị tiêu chuẩn
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :positioning_equipment %></td>
+              <td> <%= f.check_box :positioning_equipment %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :roof_window %></td>
+              <td> <%= f.check_box :roof_window %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :glass_electric_adjustment %></td>
+              <td> <%= f.check_box :glass_electric_adjustment %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :power_steering %></td>
+              <td> <%= f.check_box :power_steering %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :seat_material %></td>
+              <td> <%= f.text_field :seat_material, title: "Hãy nhập chất liệu,tiện nghi của ghế. Vd: Da, chỉnh điện", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :air_conditioner_ago %></td>
+              <td> <%= f.check_box :air_conditioner_ago %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :after_conditioning %></td>
+              <td> <%= f.check_box :after_conditioning %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :supports_auto %></td>
+              <td> <%= f.check_box :supports_auto %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :tumble_glass_after %></td>
+              <td> <%= f.check_box :tumble_glass_after %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :fan_behind_glass %></td>
+              <td> <%= f.check_box :fan_behind_glass %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :stained_glass %></td>
+              <td> <%= f.check_box :stained_glass %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :lcd_screen %></td>
+              <td> <%= f.check_box :lcd_screen %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :device_audio_video %></td>
+              <td> <%= f.text_field :device_audio_video, title: "Hãy nhập thiết bị giải trí âm thanh/ video. Vd: VCD, MP3, Radio.. ", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Thiết bị khác
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :device_other %></td>
+              <td> <%= f.text_area :device_other, title: "Hãy nhập thiết bị khác nếu có.", cols: 20, rows: 10, class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Kích thước/Trọng lượng
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :width_wide_height %></td>
+              <td> <%= f.text_field :width_wide_height, title: "Thông tin chiều dài,rộng,cao xe của bạn. VD: 2500x1800x1200. Chú ý: Nếu nhập thì phải đúng định đạng như trên", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :wheelbase %></td>
+              <td> <%= f.text_field :wheelbase, title: "Thông tin chiều dài cơ sở của xe. VD: 2000 (tương ứng với chiều dài cơ sở 2 mét)", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :tread_front_rear %></td>
+              <td> <%= f.text_field :tread_front_rear, title: "Thông tin chiều rộng cơ sở trước/sau của xe. VD: 1400/1500 (tương ứng với chiều rộng cơ sở trước/sau là 1,4 mét / 1,5 mét)", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :weight %></td>
+              <td> <%= f.text_field :weight, title: "Thông tin trọng lượng không tải. VD: bạn nhập 2200 cho xe có trọng lượng ko tải 2,2 tấn", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :fuel_tank_capacity %></td>
+              <td> <%= f.text_field :fuel_tank_capacity, title: "Dung tích bình nhiên liệu. VD: bạn nhập 80 cho dung tích 80 lít", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Động cơ
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :engine %></td>
+              <td> <%= f.text_field :engine, title: "Thông tin động cơ. VD: 3.5L 268 hp V6", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :engine_type %></td>
+              <td> <%= f.text_field :engine_type, title: "Kiểu động cơ. VD: 2.0, 4 xilanh", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :cylinder_capacity %></td>
+              <td> <%= f.text_field :cylinder_capacity, title: "Dung tích xy lanh. VD: 2500 cho dung tích 2500cc", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Phanh - Giảm xóc - Lốp
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :brake %></td>
+              <td> <%= f.text_field :brake, title: "Mô tả phanh. VD: Đĩa có ABS", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :reducing_care %></td>
+              <td> <%= f.text_field :reducing_care, title: "Mô tả giảm sóc. VD: Độc lập", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :tires %></td>
+              <td> <%= f.text_field :tires, title: "Mô tả lốp xe. VD: 245/50R20", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td><%= f.label :rim_wheels %></td>
+              <td> <%= f.text_field :rim_wheels, title: "Mô tả vành mâm xe. VD: Đúc Hợp Kim", class: "input-xlarge" %> </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <p class="p_span">
+                Thông số kỹ thuật khác:
+              </p></td>
+            </tr>
+            <tr>
+              <td><%= f.label :other_specifications %></td>
+              <td> <%= f.text_area :other_specifications, title: "Nếu xe bạn có thêm các thông số kỹ thuật khác, bạn hãy nhập vào đây", cols: 20, rows: 10, class: "input-xlarge" %> </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <td colspan="2">
+              <p>
+                Đăng ảnh cho xe (ít nhất 5 ảnh tương ứng 5 góc chụp khác nhau nếu có)
+              </p></td>
+            </tr>
+            <tr>
+              <th><%= t ".field" %></th>
+              <th><%= t ".value" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% (1..6).each do |i| %>
+            <tr>
+              <td>写真<%= i %>
+              <br />
+              <div class="align-center margin-top10">
+                <%= label_tag "", class: %W(btn danger mini) do %><%= f.check_box "remove_image#{i}" %>この写真を削除<% end if @car.send("image#{i}?") %>
+
+              </td>
+              <td> <%= image_tag @car.send("image#{i}"), width: 180 if @car.send("image#{i}?") %><%= f.file_field "image#{i}" %> </td>
+            </tr>
+            <% end %>
+            <tr>
+              <td><%= f.label :sale_price %></td>
+              <td> <%= f.check_box :sale_price %> </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="form-actions">
+          <%= f.submit class: %w(btn btn-primary) %>
+        </div> <% end %>
+      </tr>
+
+      <tr>
+        <td align="center" valign="top" class="pad5">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table></td>
+
+<script>
+$(function() {
+var tooltips = $( "[title]" ).tooltip();
+$( "<button>" )
+.button()
+.click(function() {
+tooltips.tooltip( "open" );
+})
+.insertAfter( "form" );
+});
+</script>
