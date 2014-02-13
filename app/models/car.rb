@@ -1,7 +1,7 @@
 class Car < ActiveRecord::Base
   require "carrierwave/orm/activerecord"
 
-  PERMITTED_PARAMS = [:name, :sale_price, :title, :m_manufacturer_id, :m_life_car_id, :gearbox_id, :exterior_id, :interior_id, :instruction_boot_id,
+  PERMITTED_PARAMS = [:visitor_id, :name, :sale_price, :title, :m_manufacturer_id, :m_life_car_id, :gearbox_id, :exterior_id, :interior_id, :instruction_boot_id,
     :currency_id, :m_status_id, :m_origin_id, :driven_id, :rank, :start_year, :km_use,
     :number_door, :number_seat, :fuel, :system_fuel, :consumption_fuel, :description,
     :airbags_for_driver, :airbags_for_fron_passengers, :airbags_for_rear_passengers,
@@ -28,9 +28,11 @@ class Car < ActiveRecord::Base
   belongs_to :interior
   belongs_to :instruction_boot
   belongs_to :currency
+  belongs_to :visitor
   belongs_to :m_status, class_name: M::Status.name
   belongs_to :m_origin, class_name: M::Origin.name
   belongs_to :driven
+  has_many :likes, dependent: :destroy
 
   mount_uploader :image1, PictureUploader
   mount_uploader :image2, PictureUploader

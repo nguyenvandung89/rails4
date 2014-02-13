@@ -1,4 +1,4 @@
-class Admin::CurrenciesController < ApplicationController
+class Admin::CurrenciesController < AdminsController
 
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 

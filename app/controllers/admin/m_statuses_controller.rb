@@ -1,4 +1,4 @@
-class Admin::MStatusesController < ApplicationController
+class Admin::MStatusesController < AdminsController
 
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 

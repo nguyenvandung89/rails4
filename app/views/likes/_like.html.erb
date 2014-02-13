@@ -1,0 +1,11 @@
+<% if like = current_visitor.likes.find_by_car_id(car.id) %>
+ <%= form_for like, :html => { :method => :delete }, :remote => true do |f| %>
+   <%= f.submit "Unlike" %>
+ <% end %>
+<% else %>
+ <%= form_for current_visitor.likes.build, :remote => true do |f| %>
+  <%= f.hidden_field :car_id, :value => car.id %>
+  <%= f.hidden_field :visitor_id %>
+  <%= f.submit "Like" %>
+ <% end %>
+<% end %>

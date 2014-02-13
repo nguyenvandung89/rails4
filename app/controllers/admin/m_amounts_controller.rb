@@ -1,4 +1,4 @@
-class Admin::MAmountsController < ApplicationController
+class Admin::MAmountsController < AdminsController
 
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 

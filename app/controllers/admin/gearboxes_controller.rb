@@ -1,4 +1,4 @@
-class Admin::GearboxesController < ApplicationController
+class Admin::GearboxesController < AdminsController
 
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 

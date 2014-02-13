@@ -1,4 +1,4 @@
-class Admin::SalonCarsController < ApplicationController
+class Admin::SalonCarsController < AdminsController
 
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 
