@@ -1,9 +1,14 @@
 class Visitor::CarsController < VisitorsController
   layout "car"
+  before_filter :authenticate_visitor!, except: [:index, :show]
   before_filter :load_object, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cars = Car.all.page params[:page]
+    @q = Car.search params[:q]
+    res = @q.result
+    res = res.newcars if params[:target] == "newcars"
+    res = current_visitor.cars if params[:target] == "mycars"
+    @cars = res.page params[:page]
   end
 
   def show
@@ -37,7 +42,7 @@ class Visitor::CarsController < VisitorsController
 
   def destroy
     @car.destroy
-    redirect_to root_path,  notice: :".destroyed"
+    redirect_to cars_path(target: :mycars),  notice: :".destroyed"
   end
 
   private

@@ -42,4 +42,5 @@ class Car < ActiveRecord::Base
   mount_uploader :image6, PictureUploader
 
   scope :sales, -> {where(sale_price: true)}
+  scope :newcars, ->{where("created_at >= ?", (Time.now - 3.months))}
 end

@@ -23,3 +23,6 @@
 a:hover{
 background: none !important;
 }
+#like{
+  text-align: right;
+}
