@@ -1,42 +1,116 @@
-<section id="cars-index" class="row-fluid">
-  <h1 class="page-title"><%= t(".title") %></h1>
-  <div class="actions">
-    <%= link_to "new", new_admin_car_path %>
-  </div>
-  <%= paginate @cars %>
-  <table class="table table-bordered table-striped">
-    <tr>
-      <th><%= Car.h :m_manufacturer_id %></th>
-      <th><%= Car.h :m_life_car_id %></th>
-      <th><%= Car.h :start_year %></th>
-      <th><%= Car.h :m_origin_id %></th>
-      <th><%= Car.h :driven_id %></th>
-      <th><%= Car.h :amount %></th>
-      <th><%= Car.h :visibility %></th>
-      <th><%= Car.h :exterior_id %></th>
-      <th><%= Car.h :gearbox_id %></th>
-      <th><%= Car.h :number_seat %></th>
-      <th><%= Car.h :fuel %></th>
-      <th colspan="3"></th>
-    </tr>
+<td width="732" valign="top">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+    <table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="35" background="/assets/visitor/top/quicksearch_bg.jpg" class="text1">&nbsp;&nbsp;Show a car</td>
+      </tr>
+      <tr>
+        <td align="center"  class="pad5" valign="top" style="border:1PX solid #343232;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+            <table width="100%"  border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr><td>
+                <div id="timkien", style="float: right;">
+                    <%= search_form_for @q, url: cars_path, method: :get,
+                        html: {id: "search-form", class: "search-form #{@q.conditions.empty? ? "" : "show"}"} do |f| %>
+                            <%= f.label :name_cont, Car.h(:name) %>
+                            <%= f.text_field :name_cont, class: "text_tk" %>
+                            <%= f.submit "Search" %><br /><br />
+                      <% end %>
+                </div>
+              </td></tr>
+              <tr>
+                <td align="center" valign="top" class="pad5 bg3 imageborder">
+                <%= paginate @cars %>
+                <table width="99%" border="0" align="center" cellpadding="1" cellspacing="1" class="runing_text">
 <% @cars.each do |car| %>
-    <tr>
-      <td><%= car.m_manufacturer.name %></td>
-      <td><%= car.m_life_car.name %></td>
-      <td><%= car.start_year %></td>
-      <td><%= car.m_origin.name %></td>
-      <td><%= car.driven.driven_type %></td>
-      <td><%= car.amount %></td>
-      <td><%= car.visibility %></td>
-      <td><%= car.exterior.color %></td>
-      <td><%= car.gearbox.gearbox_type %></td>
-      <td><%= car.number_seat %></td>
-      <td><%= car.fuel %></td>
-      <td><%= link_to "Show", admin_car_path(car) %></td>
-      <td><%= link_to t(".edit"), edit_admin_car_path(car) %></td>
-      <td><%= link_to t(".destroy"), admin_car_path(car), method: :delete, data: {confirm: "are you sure"} %></td>
-    </tr>
+                  <tr>
+                    <td width="166" align="center" valign="top"> <%= link_to image_tag(car.image1, width: "125", height: "90", border: "0", class: "box_img"), car_path(car) %> </td>
+                    <td valign="top" class="pad5"><%= link_to car.name, car_path(car), class: "heading3" %>
+                    <br />
+                    <span class="text_bold"><%= car.description %>
+                      <br/>
+                    </span></td>
+                    <td width="125" valign="top" class="pad5">
+                    <p>
+                      &nbsp;&nbsp; <span class="readmore">PRICE:
+<%   if car.visibility == true %>
+                        $ <%= car.amount %>
+<%   else %>
+                        <%= car.amount %>TriệuVNĐ
+<%   end %> 
+                    </span>
+                      <br/>
+                    </p>
+                    <br />
+                    <br />
+<% if visitor_signed_in? %>
+                    <div id="like">
+                      <%= render partial: "likes/like", locals: {car: car} %>
+                    </div>
 <% end %>
-  </table>
-  <%= paginate @cars %>
-</section>
+                    <br />
+<% if params[:target] == "mycars" %>
+                      <%= link_to "Edit", edit_car_path(car) %>
+                      <%= button_to "Destroy", car_path(car), method: :delete, data: {confirm: "Areyou sure?"}, class: "white_bold" %>
+<% end %>
+                    </td>
+                  </tr>
+                  <tr><td><br /></td></tr>
+                  <tr><td align="center" valign="top" colspan="4"><hr size="1"></td></tr>
+                  <tr><td><br /></td></tr>
+<% end %>
+                </table>
+                <%= paginate @cars %>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="top" class="text_red pad5"></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" class="pad5">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table></td>
+<style type="text/css" media="screen">
+#timkiem{
+  background: #ECE7DB;
+  bottom: 10px;
+  right: 10;
+  padding: 6px;
+  width: 245px;
+}
+/* line 52, ../_sass/_module.scss */
+.text_tk{
+  border: 1px solid #CCCCCC;
+  height: 21px;
+  margin-right: 7px;
+  padding: 3px;
+  width: 169px;
+}
+</style>

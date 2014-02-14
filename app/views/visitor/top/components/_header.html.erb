@@ -60,18 +60,10 @@
                         s.parentNode.insertBefore(po, s);
                       })();
                     </script></td><td width="100"><div id="fb-root"></div>
-                    <script>
-                      ( function(d, s, id) {
-                          var js, fjs = d.getElementsByTagName(s)[0];
-                          if (d.getElementById(id))
-                            return;
-                          js = d.createElement(s);
-                          js.id = id;
-                          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-                          fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));
-                    </script><div class="fb-like" data-href="http://www.toplinecar.com/" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div></td>
-                    <td width="120"><a href="https://twitter.com/toplinecar" class="twitter-follow-button" data-show-count="false">Follow @toplinecar</a>
+                    <td width="120">
+<% if visitor_signed_in? %>
+                      Hello: <%= link_to current_visitor.email, "#", class: "twitter-follow-button" %>
+<% end %>
                     <script>
                       ! function(d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0];
@@ -95,7 +87,7 @@
                         <td width="1" align="center" bgcolor="#878787"></td>
                         <td align="center"><%= link_to "Create New Car", new_car_path, class: "white_bold" %></td>
                         <td width="1" align="center" bgcolor="#878787"></td>
-                        <td align="center"><a href="/browse-car" class="white_bold" title="Browse Cars">Browse Cars</a></td>
+                        <td align="center"><%= link_to "Browse Cars", cars_path, class: "white_bold" %></td>
                         <td width="1" align="center" bgcolor="#878787"></td>
                         <td align="center"><a href="/details-search" class="white_bold" title="Search Cars">Search</a></td>
                         <td width="1" align="center" bgcolor="#878787"></td>
@@ -109,9 +101,11 @@
                         <% end %>
                         </td>
                         <td width="1" align="center" bgcolor="#878787"></td>
-                        <td align="center"><a href="/contact-us" class="white_bold" title="Contact Us">Contact Us</a></td>
+<% if visitor_signed_in? %>
+                        <td align="center"><%= link_to "My Cars", cars_path(target: :mycars), class: "white_bold" %></td> 
+<% end %>
                         <td width="1" align="center" bgcolor="#878787"></td>
-                        <td align="center"><a href="/latest-cars" class="white_bold" title="Latest Car">Latest Cars</a></td>
+                        <td align="center"><%= link_to "Latest Cars", cars_path(target: :newcars), class: "white_bold" %></td>
                       </tr>
                     </table></td>
                   </tr>
@@ -160,7 +154,7 @@
                     <td>&nbsp;</td>
                   </tr>
                   <tr>
-                    <td align="right"><span class="text1"><h3><strong>74922</strong> Cars Available For Sale By <strong>1674</strong> Car Dealers </h3></span></td>
+                    <td align="right"><span class="text1"><h3><strong><%= Car.all.count %></strong> Cars Available For Sale By <strong><%= Car.sales.count %></strong> Car Dealers </h3></span></td>
                   </tr>
                   <tr>
                     <td align="right" class="usedcars">&nbsp;</td>
