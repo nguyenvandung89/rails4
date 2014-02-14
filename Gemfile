@@ -5,7 +5,8 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-gem "mysql2"
+# gem "mysql2"
+gem 'pg', '0.15.1'
 gem "validates_timeliness", "~> 3.0"
 gem "devise"
 # Use SCSS for stylesheets
