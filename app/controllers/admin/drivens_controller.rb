@@ -17,7 +17,6 @@ class Admin::DrivensController < AdminsController
   end
 
   def create
-    binding.pry
     @driven = Driven.new driven_params
     if @driven.save
       redirect_to admin_driven_path(@driven), notice: {:".created" => {driven_type: @driven.driven_type}}
