@@ -15,7 +15,7 @@ module SideMenuHelper
           interiors: ->{admin_interiors_path},
           gearboxes: ->{admin_gearboxes_path},
           drivens: ->{admin_drivens_path},
-          drivens: ->{admin_currencies_path},
+          currencies: ->{admin_currencies_path},
           instruction_boots: ->{admin_instruction_boots_path},
           cars: ->{admin_cars_path}
         }
