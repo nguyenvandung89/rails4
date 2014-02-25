@@ -3,6 +3,7 @@ Rails4::Application.routes.draw do
   resources :categories
   resources :likes, only: [:create, :destroy]
   devise_for :users
+  resources :comments, only: [:create, :destroy]
   namespace :admin do
      resources :m_manufacturers
      resources :m_amounts
