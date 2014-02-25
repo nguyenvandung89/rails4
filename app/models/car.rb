@@ -33,6 +33,7 @@ class Car < ActiveRecord::Base
   belongs_to :m_origin, class_name: M::Origin.name
   belongs_to :driven
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   mount_uploader :image1, PictureUploader
   mount_uploader :image2, PictureUploader

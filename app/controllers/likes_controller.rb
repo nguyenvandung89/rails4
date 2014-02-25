@@ -1,5 +1,5 @@
 class LikesController < VisitorsController
-  skip_before_filter :verify_authenticity_token  
+  skip_before_filter :verify_authenticity_token
   def create
     @like = Like.create(params.require(:like).permit(:car_id, :visitor_id))
     @car = @like.car
