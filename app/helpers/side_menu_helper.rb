@@ -17,7 +17,8 @@ module SideMenuHelper
           drivens: ->{admin_drivens_path},
           currencies: ->{admin_currencies_path},
           instruction_boots: ->{admin_instruction_boots_path},
-          cars: ->{admin_cars_path}
+          cars: ->{admin_cars_path},
+          products: ->{admin_products_path}
         }
       },
       # {
