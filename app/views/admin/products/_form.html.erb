@@ -1,0 +1,21 @@
+<%= form_for [:admin, @product], remote: true, html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
+<div class="modal-body">
+  <ul class="errors"></ul>
+  <div class="control-group">
+    <%= f.label :name, class:"control-label" %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :content, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :content %>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <%= f.submit class: "btn btn-primary" %>
+  <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+</div>
+<% end %>

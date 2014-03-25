@@ -40,6 +40,7 @@ ja:
           currencies:
           instruction_boots:
           cars:
+          products:
         manage_master_datas:
           header: "DU LIEU CHUAN"
           m_manufacturers:

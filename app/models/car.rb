@@ -20,7 +20,7 @@ class Car < ActiveRecord::Base
     :remove_image1, :image2, :image2_cache, :remove_image2, :image3, :image3_cache,
     :remove_image3, :image4, :image4_cache, :remove_image4, :image5, :image5_cache,
     :remove_image5, :image6, :image6_cache, :remove_image6]
-    
+
   belongs_to :m_manufacturer, class_name: M::Manufacturer.name
   belongs_to :m_life_car, class_name: M::LifeCar.name
   belongs_to :gearbox

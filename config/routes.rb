@@ -20,6 +20,7 @@ Rails4::Application.routes.draw do
      resources :instruction_boots
      resources :m_origins
      resources :cars
+     resources :products
   end
   
 scope module: :visitor do
