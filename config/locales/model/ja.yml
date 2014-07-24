@@ -45,28 +45,28 @@ ja:
         m_industry_type_ids: "店舗形態"
         created_at: "登録日"
       m/manufacturer:
-        name: "オプション名"
-        created_at: "作成日"
-        sort: "優先度"
+        name: "Name"
+        created_at: "Created At"
+        sort: "Sort"
         name_en:
         logo:
       m/amount:
         amount:
-        created_at: "作成日"
+        created_at: "Created At"
       m/status:
         status:
-        created_at: "作成日"
+        created_at: "Created At"
       exterior:
         color:
-        created_at: "作成日"
+        created_at: "Created At"
       interior:
         color:
-        created_at: "作成日"
+        created_at: "Created At"
       post_buy_car:
         m_amount_id:
         title:
         content:
-        created_at: "作成日"
+        created_at: "Created At"
       salon_car:
         address:
         name:
@@ -79,36 +79,36 @@ ja:
         image6:
         background:
         description:
-        created_at: "作成日"
+        created_at: "Created At"
       m/prefecture:
         name:
         roman_name:
         sort:
-        created_at: "作成日"
+        created_at: "Created At"
       gearbox:
         gearbox_type:
         detail:
-        created_at: "作成日"
+        created_at: "Created At"
       driven:
         driven_type:
         detail:
-        created_at: "作成日"
+        created_at: "Created At"
       currency:
         name:
         name_en:
-        created_at: "作成日"
+        created_at: "Created At"
       m/life_car:
         name:
         content:
-        created_at: "作成日"
+        created_at: "Created At"
       instruction_boot:
         name:
         detail:
-        created_at: "作成日"
+        created_at: "Created At"
       m/origin:
         name:
         detail:
-        created_at: "作成日"
+        created_at: "Created At"
       car:
         m_manufacturer_id:
         m_life_car_id:

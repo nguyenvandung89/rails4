@@ -1,7 +1,7 @@
 <section id="amounts-index" class="row-fluid">
   <h1 class="page-title"><%= t(".title") %></h1>
-  <div class="actions">
-    <%= link_to "new", new_admin_m_amount_path %>
+  <div class="well">
+    <%= link_to "new", new_admin_m_amount_path, class: :btn %>
   </div>
   <%= paginate @m_amounts %>
   <table class="table table-bordered table-striped">

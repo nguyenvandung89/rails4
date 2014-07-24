@@ -5,8 +5,8 @@ class CommentsController < VisitorsController
     @comment = Comment.new(params.require(:comment).permit(:car_id, :visitor_id, :comments))
     @comment.save
     respond_to do |format|
-      format.html {redirect_to :back}
       format.js
+      format.html {redirect_to :back}
     end
   end
 
@@ -15,7 +15,7 @@ class CommentsController < VisitorsController
     @car = @comment.car
     respond_to do |format|
       format.html {redirect_to :back}
-    format.js
+      format.js
     end
   end
 end

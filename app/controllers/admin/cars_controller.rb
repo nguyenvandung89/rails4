@@ -27,7 +27,11 @@ class Admin::CarsController < AdminsController
 
   def update
     if @car.update(car_params)
-      redirect_to admin_car_path(@car), notice: :".updated"
+      respond_to do |format|
+        format.js
+        format.html {redirect_to :back}
+      end
+      # redirect_to admin_car_path(@car), notice: :".updated"
     else
       render :edit
     end

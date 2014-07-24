@@ -1,0 +1,16 @@
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Name_en</th>
+    <th>Sort</th>
+  </tr>
+  <% @m_manufacturers.each do |manufacturer| %>
+  <tr>
+    <td><%= manufacturer.id %></td>
+    <td><%= manufacturer.name %></td>
+    <td><%= manufacturer.name_en %></td>
+    <td><%= manufacturer.sort %></td>
+  </tr>
+  <% end %>
+</table>

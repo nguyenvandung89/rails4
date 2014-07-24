@@ -3,6 +3,12 @@ class Admin::MManufacturersController < AdminsController
 
   def index
     @m_manufacturers = M::Manufacturer.all.page params[:page]
+    respond_to do |format|
+      format.html 
+      format.csv {headers_for_downloading_csv}
+      format.xls
+      format.pdf
+    end
   end
 
   def show
