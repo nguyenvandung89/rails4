@@ -17,11 +17,31 @@
         <td><%= requirement_label @car, :name %></td>
         <td><%= Car.h :name %></td>
         <td><%= @car.name %></td>
+        <td>
+          <%= form_for [:admin, @car], remote: true, method: :put do |f| %>
+            <div class="m_amount", style="display: none;">
+              <%= f.text_field :name %><br />
+              <%= f.submit "Save", {class: %W(btn success)} %>
+              <%= f.submit "Cancel", {class: %W(btn danger cancel)} %>
+            </div>
+            <%= link_to "Edit", "#", id: "edit_amount" %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td><%= requirement_label @car, :title %></td>
         <td><%= Car.h :title %></td>
         <td><%= @car.title %></td>
+        <td>
+          <%= form_for [:admin, @car], remote: true, method: :put do |f| %>
+            <div class="m_amount", style="display: none;">
+              <%= f.text_field :title %><br />
+              <%= f.submit "Save", {class: %W(btn success)} %>
+              <%= f.submit "Cancel", {class: %W(btn danger cancel)} %>
+            </div>
+            <%= link_to "Edit", "#", id: "edit_amount" %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td><%= requirement_label @car, :m_manufacturer_id %></td>
@@ -378,3 +398,15 @@
     </tbody>
   </table>
 </section>
+<% content_for :bottom do %>
+  <script type="text/javascript">
+    $("#edit_amount").click(function(e){
+      e.preventDefault();
+      $(".m_amount").show();
+    });
+    $(".cancel").click(function(e){
+      e.preventDefault();
+      $(".m_amount").hide();
+    });
+  </script>
+<% end %>

@@ -27,7 +27,11 @@ class Admin::MAmountsController < AdminsController
 
   def update
     if @m_amount.update(m_amount_params)
-      redirect_to admin_m_amount_path(@m_amount), notice: {:".updated" => {amount: @m_amount.amount}}
+      respond_to do |format|
+        format.js
+        format.html {redirect_to :back}
+      end
+      # redirect_to admin_m_amount_path(@m_amount), notice: {:".updated" => {amount: @m_amount.amount}}
     else
       render :edit
     end

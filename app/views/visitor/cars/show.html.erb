@@ -73,14 +73,14 @@
                           <% end %> </td>
                           <section>
                             <% @car.comments.each do |comment| %>
-                            <div id="comment-<%= comment.id %>">
-                            <%= render partial: 'comments/comment', locals: {comment: comment} %>
-                            <% if comment.visitor.check_visitor(current_visitor) %>
-                            <%= link_to content_tag(:i, "", class: "icon-trash icons"), comment, method: :delete,
-                            data: { confirm: "Are you sure?" },
-                            title: "Delete", remote: true %>
-                            <% end %>
-                            </div>
+                              <section id="div_comment">
+                                <%= simple_format(comment.comments) %>
+                              </section>
+                              <% if comment.visitor.check_visitor(current_visitor) %>
+                              <%= link_to content_tag(:i, "", class: "icon-trash icons"), comment, method: :delete,
+                              data: { confirm: "Are you sure?" },
+                              title: "Delete", remote: true %>
+                              <% end %>
                             <% end %>
                           </section>
                         </tr>

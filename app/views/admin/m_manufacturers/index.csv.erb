@@ -1,0 +1,9 @@
+name,name_en,sort
+<% @m_manufacturers.each do |manufacturer|
+  row = []
+  row << manufacturer.name
+  row << manufacturer.name_en
+  row << manufacturer.sort
+%>
+<%= row.join(",") %>
+<% end %>

@@ -1,1 +1,1 @@
-$("#comment-<%= @comment.id %>").append('j <%= render partial: "comments/comment", locals: {comment: @comment} %>');
+$("#div_comment").append('<%= simple_format(@comment.comments) %>');

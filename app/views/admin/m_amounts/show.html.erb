@@ -16,8 +16,30 @@
       <tr>
         <td><%= requirement_label @m_amount, :amount %></td>
         <td><%= M::Amount.h :amount %></td>
-        <td><%= @m_amount.amount %></td>
+        <td class="div_amount"><%= @m_amount.amount %></td>
+        <td>
+          <%= form_for [:admin, @m_amount], remote: true, method: :put do |f| %>
+            <div class="m_amount", style="display: none;">
+              <%= f.text_field :amount %><br />
+              <%= f.submit "Save", {class: %W(btn success)} %>
+              <%= f.submit "Cancel", {class: %W(btn danger cancel)} %>
+            </div>
+            <%= link_to "Edit", "#", id: "edit_amount" %>
+          <% end %>
+        </td>
       </tr>
     </tbody>
   </table>
 </section>
+<% content_for :bottom do %>
+  <script type="text/javascript">
+    $("#edit_amount").click(function(e){
+      e.preventDefault();
+      $(".m_amount").show();
+    });
+    $(".cancel").click(function(e){
+      e.preventDefault();
+      $(".m_amount").hide();
+    });
+  </script>
+<% end %>

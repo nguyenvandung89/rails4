@@ -1,11 +1,15 @@
 <section id="manufacturers-index" class="row-fluid">
   <h1 class="page-title"><%= t(".title") %></h1>
-  <div class="actions">
-    <%= link_to "new", new_admin_m_manufacturer_path %>
+  <div class="well">
+    <%= link_to "new", new_admin_m_manufacturer_path, class: :btn %>
+    <%= link_to "download csv", admin_m_manufacturers_path(params.merge(format: :csv)), class: :btn %>
+    <%= link_to "download excel", admin_m_manufacturers_path(params.merge(format: :xls)), class: :btn %>
+    <%= link_to "download pdf", admin_m_manufacturers_path(params.merge(format: :pdf)), class: :btn %>
   </div>
   <%= paginate @m_manufacturers %>
   <table class="table table-bordered table-striped">
     <tr>
+      <th>ID</th>
       <th><%= M::Manufacturer.h :name %></th>
       <th><%= M::Manufacturer.h :name_en %></th>
       <th><%= M::Manufacturer.h :logo %></th>
@@ -14,6 +18,7 @@
     </tr>
 <% @m_manufacturers.each do |manufacturer| %>
     <tr>
+       <td><%= manufacturer.id %></td>
       <td><%= link_to manufacturer.name, admin_m_manufacturer_path(manufacturer) %></td>
       <td><%= manufacturer.name_en %></td>
       <td><%= image_tag manufacturer.logo %></td>
