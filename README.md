@@ -117,12 +117,18 @@ every 1.day, at: "7:00 am" do
   rake "data:fetch_products"
 end
 ```
-Demo heroku
+##Demo heroku
 http://peaceful-mountain-3269.herokuapp.com/
+
 authenticate: nguyenvandung
+
 pass: nguyenvandung
+
 user:admin@gmail.com
+
 pass: 12345678
+
 code github
+
 https://github.com/nguyenvandung89/rails4
 
