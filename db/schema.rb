@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317074041) do
+ActiveRecord::Schema.define(version: 20140725035855) do
+
+  create_table "bulletins", force: true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "date"
+    t.boolean  "visibility"
+  end
 
   create_table "cars", force: true do |t|
     t.integer  "m_manufacturer_id"

@@ -19,6 +19,7 @@ class Admin::CarsController < AdminsController
   def create
     @car = Car.new car_params
     if @car.save
+      UserMailerSend.perform_async @car.id
       redirect_to admin_car_path(@car), notice: :".created"
     else
       render :new
@@ -27,6 +28,7 @@ class Admin::CarsController < AdminsController
 
   def update
     if @car.update(car_params)
+      UserMailerSend.perform_async @car.id
       respond_to do |format|
         format.js
         format.html {redirect_to :back}

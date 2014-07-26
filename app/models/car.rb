@@ -42,6 +42,12 @@ class Car < ActiveRecord::Base
   mount_uploader :image5, PictureUploader
   mount_uploader :image6, PictureUploader
 
+
   scope :sales, -> {where(sale_price: true)}
   scope :newcars, ->{where("created_at >= ?", (Time.now - 3.months))}
+
+  def send_mail_for_user!
+    binding.pry
+    UserMailerSend.perform_async car
+  end
 end
