@@ -26,7 +26,6 @@ runner 'Warehouse::FtpPull.perform_async'
 Trong demo tôi giới thiệu 2 công việc mà thường được sử dụng trong chạy nền như gửi mail hay rake:task or cập nhật activerecord
 về gửi mail
 tạo một file mailer/user_maile.rb
-```Ruby
 class UserMailer < ActionMailer::Base
   default from: "ngvandung2010@gmail.com"
 
@@ -36,7 +35,6 @@ class UserMailer < ActionMailer::Base
       to: mail, subject: "tao moi 1 xe")
   end
 end
-```
 
 tạo file worker/user_mailer_send.rb
 class UserMailerSend

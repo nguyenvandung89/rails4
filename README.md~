@@ -1,6 +1,6 @@
-SIDEKIQ
-sidekiq là gì?
-sidekiq là 1 background dùng để chạy một hoặc nhiều tiến trình mà người sử dụng muốn chạy ngầm vì nó mất nhiều thời gian xử lý tương tự như resque hay delay_job
+#SIDEKIQ
+##sidekiq là gì?
+**sidekiq** là 1 background dùng để chạy một hoặc nhiều tiến trình mà người sử dụng muốn chạy ngầm vì nó mất nhiều thời gian xử lý tương tự như resque hay delay_job
 sidekiq tương thích với rails3  và rails4, hỗ trợ ruby 1.9 trở lên, và Jruby 1.7
 cài đặt
 gem install sidekiq or add gem "sidekiq" trong gemfile và bundle install.
@@ -26,7 +26,6 @@ runner 'Warehouse::FtpPull.perform_async'
 Trong demo tôi giới thiệu 2 công việc mà thường được sử dụng trong chạy nền như gửi mail hay rake:task or cập nhật activerecord
 về gửi mail
 tạo một file mailer/user_maile.rb
-
 class UserMailer < ActionMailer::Base
   default from: "ngvandung2010@gmail.com"
 
