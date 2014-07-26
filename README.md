@@ -119,12 +119,22 @@ end
 ```
 ##Demo heroku
 http://peaceful-mountain-3269.herokuapp.com/
-
 authenticate: nguyenvandung
 
 pass: nguyenvandung
 
+####admin
+http://peaceful-mountain-3269.herokuapp.com/users/sign_in
+
 user:admin@gmail.com
+
+pass: 12345678
+
+
+####visitor 
+http://peaceful-mountain-3269.herokuapp.com/visitors/sign_in
+
+user: visitor@gmail.com
 
 pass: 12345678
 
